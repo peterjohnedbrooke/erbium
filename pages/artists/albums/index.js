@@ -31,48 +31,51 @@ export default function Albums({ albums }) {
   }, []);
 
   const reverseAlbums = albums.data.map((album) => album).reverse();
-
-  return (
-    <div>
-      <Head>
-        <title>Albums</title>
-      </Head>
-      <Hero />
-      <ContentWrapper>
-        <div className={styles.container}>
-          <motion.div
-            ref={carousel}
-            className={styles.carousel}
-            whileTap={{ cursor: "grabbing" }}
-          >
+  if (!!albums) {
+    return (
+      <div>
+        <Head>
+          <title>Albums</title>
+        </Head>
+        <Hero />
+        <ContentWrapper>
+          <div className={styles.container}>
             <motion.div
-              drag="x"
-              dragConstraints={{ right: 0, left: -width }}
-              className={styles.innerCarousel}
+              ref={carousel}
+              className={styles.carousel}
+              whileTap={{ cursor: "grabbing" }}
             >
-              {reverseAlbums.map((album, i) => {
-                const { Title, Description } = album.attributes;
-                const id = album.id;
-                const { Image } = album.attributes.Image.data[0].attributes.url;
-                return (
-                  <motion.div key={id} className={styles.item}>
-                    <AlbumCard
-                      album={album}
-                      Title={Title}
-                      Descriptiom={Description}
-                      Slug={`${album.attributes.Slug}`}
-                      Image={Image}
-                      id={id}
-                      key={i}
-                    />
-                  </motion.div>
-                );
-              })}
+              <motion.div
+                drag="x"
+                dragConstraints={{ right: 0, left: -width }}
+                className={styles.innerCarousel}
+              >
+                {reverseAlbums.map((album, i) => {
+                  const { Title, Description } = album.attributes;
+                  const id = album.id;
+                  const { Image } =
+                    album.attributes.Image.data[0].attributes.url;
+                  return (
+                    <motion.div key={id} className={styles.item}>
+                      <AlbumCard
+                        album={album}
+                        Title={Title}
+                        Descriptiom={Description}
+                        Slug={`${album.attributes.Slug}`}
+                        Image={Image}
+                        id={id}
+                        key={i}
+                      />
+                    </motion.div>
+                  );
+                })}
+              </motion.div>
             </motion.div>
-          </motion.div>
-        </div>
-      </ContentWrapper>
-      <Footer />
-    </div>
-  );
+          </div>
+        </ContentWrapper>
+        <Footer />
+      </div>
+    );
+  }
+  return null;
 }
