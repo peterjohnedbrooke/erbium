@@ -29,9 +29,7 @@ export async function getStaticProps() {
 
 export default function Home({ artists }) {
   const title = "Erbium Records";
-  const router = useRouter();
 
-  if (router.isFallback) return null;
   if (artists) {
     return (
       <div>

@@ -7,10 +7,7 @@ import Hero from "../components/Hero";
 import { useRouter } from "next/router";
 
 export default function Artist({ artist }) {
-  const router = useRouter();
-
-  if (router.isFallback) return null;
-  if (artist) {
+  if (!!artist) {
     return (
       <div>
         {/* <DesktopNav navImages={navImages} /> */}
@@ -73,6 +70,6 @@ export async function getStaticProps({ params }) {
   }
 
   return {
-    props: { artist: res || {} },
+    props: { artist },
   };
 }

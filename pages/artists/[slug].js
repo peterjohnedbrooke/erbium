@@ -9,11 +9,7 @@ import { useRouter } from "next/router";
 const URL = process.env.STRAPIBASEURL;
 
 export default function Artist({ artist }) {
-  const router = useRouter();
-
-  if (router.isFallback) return null;
-
-  if (artist) {
+  if (!!artist) {
     return (
       <div>
         <Head>
@@ -64,6 +60,6 @@ export async function getStaticProps({ params }) {
   const artist = artistData.data[0];
 
   return {
-    props: { artist: res || {} },
+    props: { artist },
   };
 }

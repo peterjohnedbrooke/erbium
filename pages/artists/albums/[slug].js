@@ -9,9 +9,6 @@ import markdownToHtml from "../../../src/lib/markdownToHtml";
 import { useRouter } from "next/router";
 
 export default function Album({ album, description }) {
-  const router = useRouter();
-
-  if (router.isFallback) return null;
   return (
     <div>
       <Head>
@@ -60,6 +57,6 @@ export async function getStaticProps({ params }) {
   const description = await markdownToHtml(album.attributes.Description);
 
   return {
-    props: { album, description: res || {} },
+    props: { album, description },
   };
 }

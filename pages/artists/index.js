@@ -29,10 +29,7 @@ export default function Artists({ artists }) {
   //   setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth);
   // }, []);
 
-  const router = useRouter();
-
-  if (router.isFallback) return null;
-  if (artists) {
+  if (!!artists) {
     return (
       <div>
         <Head>

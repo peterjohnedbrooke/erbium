@@ -32,10 +32,6 @@ export default function Albums({ albums }) {
 
   const reverseAlbums = albums.data.map((album) => album).reverse();
 
-  const router = useRouter();
-
-  if (router.isFallback) return null;
-
   return (
     <div>
       <Head>
