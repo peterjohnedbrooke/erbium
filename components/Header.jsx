@@ -16,6 +16,7 @@ export default function Header({ landing }) {
               <Image
                 className={styles.navLogo}
                 src={"https://erbiumbackend.herokuapp.com" + image}
+                alt=""
               />
             </a>
           </Link>

@@ -7,7 +7,7 @@ import Hero from "../components/Hero";
 
 const URL = process.env.STRAPIBASEURL;
 
-export default function Artist({ artist, landing }) {
+export default function Artist({ artist }) {
   console.log(artist);
   return (
     <div>
@@ -21,7 +21,10 @@ export default function Artist({ artist, landing }) {
           <a> Go Home</a>
         </Link>
         <div>
-          <Image src={artist.attributes.Image.data[0].attributes.url} />
+          <Image
+            alt={artist.attributes.Name}
+            src={artist.attributes.Image.data[0].attributes.url}
+          />
         </div>
         <div>
           <h1>{artist.attributes.Name}</h1>
@@ -61,12 +64,7 @@ export async function getStaticProps({ params }) {
   const artistData = await res.json();
   const artist = artistData.data[0];
 
-  const resLanding = await fetch(
-    "https://erbiumbackend.herokuapp.com/api/navlogo?populate[image][fields][0]=url"
-  );
-  const landing = await resLanding.json();
-
   return {
-    props: { artist, landing },
+    props: { artist },
   };
 }

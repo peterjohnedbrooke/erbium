@@ -10,7 +10,7 @@ export default function NavLogo({navLogo}) {
     <div className={styles.logoContainer}>
       <Link href="/">
           <a className={styles.navLogoText}>
-            <Image padding="1em" height="65px" width="60px" className={styles.navLogo} src={logo} />
+            <Image alt="" height="65px" width="60px" className={styles.navLogo} src={logo} />
           </a>
       </Link>
     </div>

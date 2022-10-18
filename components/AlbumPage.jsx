@@ -15,7 +15,7 @@ const AlbumPage = ({album, description}) => {
       </div>
       <div className={styles.albumPageContainer}>
         <div className={styles.imgContainer}>
-          <Image
+          <Image height={800} width={800}
             src={album.attributes.Image.data[0].attributes.url}
             alt={album.attributes.Title}
           />

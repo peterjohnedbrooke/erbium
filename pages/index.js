@@ -21,13 +21,13 @@ export async function getStaticProps() {
   );
   const artists = await res.json();
 
-  const resLanding = await fetch(
-    "https://erbiumbackend.herokuapp.com/api/navlogo?populate[image][fields][0]=url"
-  );
-  const landing = await resLanding.json();
+  // const resLanding = await fetch(
+  //   "https://erbiumbackend.herokuapp.com/api/navlogo?populate[image][fields][0]=url"
+  // );
+  // const landing = await resLanding.json();
 
   return {
-    props: { artists, landing },
+    props: { artists },
   };
 }
 
