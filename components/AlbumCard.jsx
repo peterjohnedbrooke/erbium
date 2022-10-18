@@ -4,7 +4,7 @@ import styles from "../styles/AlbumCard.module.scss";
 import { Row, Col, Card, Image, Button } from 'react-bootstrap';
 import Animation from "./Animate";
 
-export default function AlbumCard({ Title, Image, Description, Slug, album, id }) {
+export default function AlbumCard({ Title, Description, Slug, album, id }) {
   return (
     <Animation>
         <div key={id} className={styles.card}>

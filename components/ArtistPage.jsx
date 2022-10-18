@@ -7,7 +7,7 @@ import Link from 'next/link'
 import LatestReleases from './LatestReleases';
 import BackButton from './BackButton';
 import Carousel from "../components/Carousel"
-import { Row, Col, Card, Image, Button } from 'react-bootstrap';
+import { Row, Col, Card, Button } from 'react-bootstrap';
 import Image from 'next/image';
 
 const ArtistPage = ({artist}) => {
