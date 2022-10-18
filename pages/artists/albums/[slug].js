@@ -8,7 +8,7 @@ import styles from "../../../styles/AlbumPage.module.scss";
 import markdownToHtml from "../../../src/lib/markdownToHtml";
 
 export default function Album({ album, description }) {
-  if (!!album) {
+  if (!!album && !!description) {
     return (
       <div>
         <Head>
