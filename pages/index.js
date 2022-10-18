@@ -5,7 +5,6 @@ import ArtistCard from "../components/ArtistCard";
 import ContentWrapper from "../components/ContentWrapper";
 import DesktopNav from "../components/DesktopNav";
 import Footer from "../components/Footer";
-import Header from "../components/Header";
 import Hero from "../components/Hero";
 import styles from "../styles/Home.module.scss";
 import styled from "@emotion/styled";

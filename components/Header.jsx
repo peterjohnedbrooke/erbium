@@ -5,6 +5,7 @@ import MobileHeader from "./MobileHeader";
 import Link from "next/link";
 import Links from "./Links";
 import DesktopNav from "./DesktopNav";
+import Image from "next/image";
 
 export default function Header({ landing }) {
   const image = landing.data.attributes.image.data[0].attributes.url;
@@ -12,7 +13,7 @@ export default function Header({ landing }) {
       <div>
           <Link href="/">
             <a>
-              <img
+              <Image
                 className={styles.navLogo}
                 src={"https://erbiumbackend.herokuapp.com" + image}
               />

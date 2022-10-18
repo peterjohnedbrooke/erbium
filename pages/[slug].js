@@ -11,7 +11,6 @@ export default function Artist({ artist, landing }) {
   console.log(artist);
   return (
     <div>
-      <Header landing={landing} />
       {/* <DesktopNav navImages={navImages} /> */}
       <Hero></Hero>
       <ContentWrapper>

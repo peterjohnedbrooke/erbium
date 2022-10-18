@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import styles from "../styles/AlbumCard.module.scss";
-import { Row, Col, Card, Image, Button } from 'react-bootstrap';
+import { Row, Col, Card, Button } from 'react-bootstrap';
 import Animation from "./Animate";
 
 export default function AlbumCard({ Title, Description, Slug, album, id }) {
