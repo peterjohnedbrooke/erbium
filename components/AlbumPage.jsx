@@ -4,7 +4,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowTurnDown } from "@fortawesome/free-solid-svg-icons";
 import Link from 'next/link'
 import BackButton from './BackButton';
-import Image from 'next/image';
+import {Image as NextImage} from 'next/image';
+
 
 const AlbumPage = ({album, description}) => {
   const arrowReturn = <FontAwesomeIcon className="iconArrow" icon={faArrowTurnDown} />;
@@ -15,7 +16,7 @@ const AlbumPage = ({album, description}) => {
       </div>
       <div className={styles.albumPageContainer}>
         <div className={styles.imgContainer}>
-          <Image
+          <NextImage
             src={album.attributes.Image.data[0].attributes.url}
             alt={album.attributes.Title}
           />

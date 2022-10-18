@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import styles from "../styles/ArtistCard.module.scss";
-import { Row, Col, Card, Image, Button } from 'react-bootstrap';
+import { Row, Col, Card, Button } from 'react-bootstrap';
 import Animation from "./Animate";
-import Image from 'next/image';
+
 
 export default function ArtistCard({Name,Image,Description,Slug,id,artist,}) 
 {

@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
-import Image from "next/image";
+import { Image as NextImage } from "next/image";
 import ContentWrapper from "../components/ContentWrapper";
 import Footer from "../components/Footer";
 import Hero from "../components/Hero";
@@ -21,12 +21,7 @@ export default function Artist({ artist, landing }) {
           <a> Go Home</a>
         </Link>
         <div>
-          <img
-            src={
-              "https://erbiumbackend.herokuapp.com" +
-              artist.attributes.Image.data[0].attributes.url
-            }
-          />
+          <NextImage src={artist.attributes.Image.data[0].attributes.url} />
         </div>
         <div>
           <h1>{artist.attributes.Name}</h1>
