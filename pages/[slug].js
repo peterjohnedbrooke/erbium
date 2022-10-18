@@ -4,36 +4,40 @@ import Image from "next/image";
 import ContentWrapper from "../components/ContentWrapper";
 import Footer from "../components/Footer";
 import Hero from "../components/Hero";
-
-const URL = process.env.STRAPIBASEURL;
+import { useRouter } from "next/router";
 
 export default function Artist({ artist }) {
-  console.log(artist);
-  return (
-    <div>
-      {/* <DesktopNav navImages={navImages} /> */}
-      <Hero></Hero>
-      <ContentWrapper>
-        <Head>
-          <title>{artist.attributes.Name}</title>
-        </Head>
-        <Link href="/">
-          <a> Go Home</a>
-        </Link>
-        <div>
-          <Image
-            alt={artist.attributes.Name}
-            src={artist.attributes.Image.data[0].attributes.url}
-          />
-        </div>
-        <div>
-          <h1>{artist.attributes.Name}</h1>
-          <p>{artist.attributes.Description}</p>
-        </div>
-      </ContentWrapper>
-      <Footer />
-    </div>
-  );
+  const router = useRouter();
+
+  if (router.isFallback) return null;
+  if (artist) {
+    return (
+      <div>
+        {/* <DesktopNav navImages={navImages} /> */}
+        <Hero></Hero>
+        <ContentWrapper>
+          <Head>
+            <title>{artist.attributes.Name}</title>
+          </Head>
+          <Link href="/">
+            <a> Go Home</a>
+          </Link>
+          <div>
+            <Image
+              alt={artist.attributes.Name}
+              src={artist.attributes.Image.data[0].attributes.url}
+            />
+          </div>
+          <div>
+            <h1>{artist.attributes.Name}</h1>
+            <p>{artist.attributes.Description}</p>
+          </div>
+        </ContentWrapper>
+        <Footer />
+      </div>
+    );
+  }
+  return null;
 }
 
 // tell next.js how many pages there are
@@ -64,7 +68,11 @@ export async function getStaticProps({ params }) {
   const artistData = await res.json();
   const artist = artistData.data[0];
 
+  if (!res?.artists?.[0]) {
+    return { notFound: true };
+  }
+
   return {
-    props: { artist },
+    props: { artist: res.artists[0] || {} },
   };
 }

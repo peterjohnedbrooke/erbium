@@ -7,6 +7,7 @@ import Footer from "../../../components/Footer";
 import Hero from "../../../components/Hero";
 import { motion } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
+import { useRouter } from "next/router";
 
 export async function getStaticProps() {
   // get albums from out api (strapi)
@@ -30,6 +31,10 @@ export default function Albums({ albums }) {
   }, []);
 
   const reverseAlbums = albums.data.map((album) => album).reverse();
+
+  const router = useRouter();
+
+  if (router.isFallback) return null;
 
   return (
     <div>

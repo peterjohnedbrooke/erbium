@@ -6,8 +6,12 @@ import Footer from "../../../components/Footer";
 import Hero from "../../../components/Hero";
 import styles from "../../../styles/AlbumPage.module.scss";
 import markdownToHtml from "../../../src/lib/markdownToHtml";
+import { useRouter } from "next/router";
 
 export default function Album({ album, description }) {
+  const router = useRouter();
+
+  if (router.isFallback) return null;
   return (
     <div>
       <Head>
@@ -41,17 +45,21 @@ export async function getStaticPaths() {
 //for each individual page: get the data for that page
 
 export async function getStaticProps({ params }) {
-  const { slug } = params;
+  const slug = params;
 
   const res = await fetch(
     `https://erbiumbackend.herokuapp.com/api/albums?filters[Slug][$eq]=${slug}&populate=*`
   );
+
+  if (!res?.artists?.[0]) {
+    return { notFound: true };
+  }
   const albumData = await res.json();
   const album = albumData.data[0];
 
   const description = await markdownToHtml(album.attributes.Description);
 
   return {
-    props: { album, description },
+    props: { album, description: res.artists[0] || {} },
   };
 }

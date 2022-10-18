@@ -1,7 +1,6 @@
 import React from "react";
 import Link from "next/link";
 import styles from "../styles/NavLogo.module.scss"
-import Logo from "./Logo";
 import Image from "next/image";
 
 export default function NavLogo({navLogo}) {

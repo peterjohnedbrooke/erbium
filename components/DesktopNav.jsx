@@ -10,7 +10,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBandcamp, faSoundcloud } from "@fortawesome/free-brands-svg-icons";
 import { faSearch } from "@fortawesome/free-solid-svg-icons"; 
 import Links from "./Links";
-import Logo from "./Logo";
 import PageLabel from "./PageLabel";
 import BackButton from "./BackButton";
 

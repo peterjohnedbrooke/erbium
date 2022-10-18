@@ -10,6 +10,7 @@ import styles from "../styles/Home.module.scss";
 import styled from "@emotion/styled";
 import dynamic from "next/dynamic";
 import PageLabel from "../components/PageLabel";
+import { useRouter } from "next/router";
 
 const URL = process.env.STRAPIBASEURL;
 
@@ -21,32 +22,33 @@ export async function getStaticProps() {
   );
   const artists = await res.json();
 
-  // const resLanding = await fetch(
-  //   "https://erbiumbackend.herokuapp.com/api/navlogo?populate[image][fields][0]=url"
-  // );
-  // const landing = await resLanding.json();
-
   return {
     props: { artists },
   };
 }
 
-export default function Home({ artists, landing }) {
+export default function Home({ artists }) {
   const title = "Erbium Records";
-  return (
-    <div>
-      <Head>
-        <title>{title}</title>
-      </Head>
-      <ContentWrapper>
-        <div className={styles.landingContainer}>
-          {/* <div>
-            <h3>Mining rare earth elements</h3>
-            <h5>driven by like-minded creators</h5>
-          </div> */}
-        </div>
-      </ContentWrapper>
-      <Footer />
-    </div>
-  );
+  const router = useRouter();
+
+  if (router.isFallback) return null;
+  if (artists) {
+    return (
+      <div>
+        <Head>
+          <title>{title}</title>
+        </Head>
+        <ContentWrapper>
+          <div className={styles.landingContainer}>
+            {/* <div>
+              <h3>Mining rare earth elements</h3>
+              <h5>driven by like-minded creators</h5>
+            </div> */}
+          </div>
+        </ContentWrapper>
+        <Footer />
+      </div>
+    );
+  }
+  return null;
 }
