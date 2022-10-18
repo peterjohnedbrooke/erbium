@@ -36,7 +36,7 @@ const ArtistPage = ({artist}) => {
         
         
         <div className={styles.artistImageCard}>
-            <Image className={styles.image} src={artist.attributes.Image.data[0].attributes.url} alt={nameUpper} />
+            <Image height={500} width={600} className={styles.image} src={artist.attributes.Image.data[0].attributes.url} alt={nameUpper} />
             <h5 className={styles.mainTitle}>{nameUpper}</h5>    
         </div> 
       

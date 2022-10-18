@@ -6,7 +6,7 @@ import Link from 'next/link'
 import BackButton from './BackButton';
 import Image from 'next/image';
 
-const AlbumPage = ({album, description}) => {
+const AlbumPage = ({album}) => {
   const arrowReturn = <FontAwesomeIcon className="iconArrow" icon={faArrowTurnDown} />;
   return (
     <div className={styles.albumPageWrapper}>
@@ -22,8 +22,8 @@ const AlbumPage = ({album, description}) => {
         </div>
         <div className={styles.albumInfo}>
           <h1 className={styles.title}>{album.attributes.Title}</h1>
-          <div className={styles.info} dangerouslySetInnerHTML={{__html: description}}>
-          </div>
+          {/* <div className={styles.info} dangerouslySetInnerHTML={{__html: description}}>
+          </div> */}
           <div className={styles.buyBtn}>
             <a target="blank" href={album.attributes.Url}>BUY</a>
           </div>

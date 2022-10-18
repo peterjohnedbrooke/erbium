@@ -6,22 +6,24 @@ import Footer from "../../../components/Footer";
 import Hero from "../../../components/Hero";
 import styles from "../../../styles/AlbumPage.module.scss";
 import markdownToHtml from "../../../src/lib/markdownToHtml";
-import { useRouter } from "next/router";
 
 export default function Album({ album, description }) {
-  return (
-    <div>
-      <Head>
-        <title>{album.attributes.Title}</title>
-      </Head>
-      {/* <DesktopNav navImages={navImages} /> */}
-      <Hero />
-      <ContentWrapper>
-        <AlbumPage album={album} description={description} />
-      </ContentWrapper>
-      <Footer />
-    </div>
-  );
+  if (!!album) {
+    return (
+      <div>
+        <Head>
+          <title>{album.attributes.Title}</title>
+        </Head>
+        {/* <DesktopNav navImages={navImages} /> */}
+        <Hero />
+        <ContentWrapper>
+          <AlbumPage album={album} description={description} />
+        </ContentWrapper>
+        <Footer />
+      </div>
+    );
+  }
+  return null;
 }
 
 export async function getStaticPaths() {
@@ -35,22 +37,18 @@ export async function getStaticPaths() {
 
   return {
     paths,
-    fallback: false,
+    fallback: true,
   };
 }
 
 //for each individual page: get the data for that page
 
 export async function getStaticProps({ params }) {
-  const slug = params;
+  const { slug } = params;
 
   const res = await fetch(
     `https://erbiumbackend.herokuapp.com/api/albums?filters[Slug][$eq]=${slug}&populate=*`
   );
-
-  if (!res) {
-    return { notFound: true };
-  }
   const albumData = await res.json();
   const album = albumData.data[0];
 
