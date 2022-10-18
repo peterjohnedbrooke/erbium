@@ -56,7 +56,7 @@ export async function getStaticProps({ params }) {
     `https://erbiumbackend.herokuapp.com/api/artists?filters[Slug][$eq]=${slug}&populate[Image][fields][1]=url&populate[albums][populate]=*&populate[socials][populate]=*`
   );
 
-  if (!res?.artists?.[0]) {
+  if (!res) {
     return { notFound: true };
   }
 
@@ -64,6 +64,6 @@ export async function getStaticProps({ params }) {
   const artist = artistData.data[0];
 
   return {
-    props: { artist: res.artists[0] || {} },
+    props: { artist: res || {} },
   };
 }

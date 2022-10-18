@@ -68,11 +68,11 @@ export async function getStaticProps({ params }) {
   const artistData = await res.json();
   const artist = artistData.data[0];
 
-  if (!res?.artists?.[0]) {
+  if (!res) {
     return { notFound: true };
   }
 
   return {
-    props: { artist: res.artists[0] || {} },
+    props: { artist: res || {} },
   };
 }
