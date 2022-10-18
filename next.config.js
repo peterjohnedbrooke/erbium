@@ -1,5 +1,5 @@
 /** @type {import('next').NextConfig} */
-const URL = process.env.STRAPIBASEURL;
+const URL = process.env.CLOUDINARYURL;
 
 module.exports = {
   reactStrictMode: true,

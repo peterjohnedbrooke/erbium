@@ -8,7 +8,7 @@ import LatestReleases from './LatestReleases';
 import BackButton from './BackButton';
 import Carousel from "../components/Carousel"
 import { Row, Col, Card, Button } from 'react-bootstrap';
-import {Image as NextImage} from 'next/image';
+import Image from 'next/image';
 
 const ArtistPage = ({artist}) => {
     const soundCloud = <FontAwesomeIcon className={styles.icons} icon={faSoundcloud} />;
@@ -36,7 +36,7 @@ const ArtistPage = ({artist}) => {
         
         
         <div className={styles.artistImageCard}>
-            <NextImage className={styles.image} src={artist.attributes.Image.data[0].attributes.url} alt={nameUpper} />
+            <Image className={styles.image} src={artist.attributes.Image.data[0].attributes.url} alt={nameUpper} />
             <h5 className={styles.mainTitle}>{nameUpper}</h5>    
         </div> 
       
