@@ -1,0 +1,130 @@
+.card {
+  transition: all 500ms;
+  overflow: hidden;
+  border-radius: 0px;
+  background-color: transparent;
+
+  .cardBack {
+    display: flex;
+    overflow: hidden;
+    background: none;
+
+  }
+
+  .cardBack img {
+    transition: transform .5s ease;
+    position: relative;
+    filter: contrast(115%);
+    min-height: fit-content;
+  }
+
+  .cardBack:hover img {
+    opacity: 1;
+    transform: scale(1.2);
+    filter: grayscale(25%);
+  }
+
+  .imageOverlay {
+    background: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 2s ease;
+    // box-shadow: inset 0px -150px 40px -30px rgba(0, 0, 0, 0.6) !important;
+    border-radius: 0px;
+
+    div {
+      display: flex;
+      flex-direction: column;
+      align-self: center;
+      justify-content: center;
+
+      button {
+        background-color: var(--color-bg-toggle);
+        color: var(--color-text-secondary) !important;
+        padding: 0.3em;
+        font-family: var(--text-family-primary);
+        // max-width: fit-content;
+        align-self: center;
+        font-weight: 600;
+        letter-spacing: 10%;
+        transform: rotate(-2deg);
+        overflow: hidden;
+      }
+
+      button:hover {
+        transform: rotate(random() + deg);
+      }
+    }
+  }
+
+  .mobileCardInfo {
+    display: none;
+  }
+
+  .overlayText {
+    font-size: 2.5vh;
+    font-weight: 600;
+    font-family: var(--text-family-primary);
+    align-self: center;
+  }
+
+  // @keyframes float {
+  //   0% {
+  //     box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+  //     transform: translatey(0px);
+  //   }
+
+  //   50% {
+  //     box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2);
+  //     transform: translatey(-20px);
+  //   }
+
+  //   100% {
+  //     box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+  //     transform: translatey(0px);
+  //   }
+  // }
+}
+
+@media screen and (max-width: 600px) {
+
+  .card {
+    .mobileCardInfo {
+      display: flex;
+      flex-direction: column;
+      background-color: transparent;
+      margin: 1em;
+      justify-content: space-between;
+      background: transparent;
+
+      button {
+        background-color: var(--color-bg-toggle);
+        color: var(--color-text-secondary) !important;
+        padding: 0.3em;
+        font-family: var(--text-family-primary);
+        // max-width: fit-content;
+        align-self: center;
+        font-weight: 600;
+        letter-spacing: 10%;
+        transform: rotate(-2deg);
+        overflow: hidden;
+      }
+
+    }
+
+
+    .imageOverlay {
+      display: none;
+    }
+
+    .cardBack:hover img {
+
+      opacity: 1;
+      transform: scale(1);
+      filter: grayscale(15%);
+      filter: contrast(105%);
+    }
+  }
+
+}

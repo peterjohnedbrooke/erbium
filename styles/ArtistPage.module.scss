@@ -1,0 +1,174 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    max-width: 1500px;
+    gap: 1rem;
+    padding: 3em;
+
+
+    .cardTitle,
+    .mainTitle {
+        margin: 1em;
+        font-family: var(--text-family-primary);
+        color: var(--color-text-secondary);
+        font-weight: bolder;
+        letter-spacing: 0.3rem;
+        background-color: var(--color-bg-toggle);
+        padding: 0.3em;
+        align-self: center;
+        font-weight: 600;
+        transform: rotate(-2deg);
+        overflow: hidden;
+    }
+
+    .cardTitle {
+        font-size: 2vh;
+        align-self: flex-start;
+    }
+
+    .mainTitle {
+        font-size: 4vh;
+    }
+
+
+    .socials,
+    .bio,
+    .releases {
+        display: flex;
+        flex-direction: column;
+        padding: 1em;
+    }
+
+
+    .artistContents {
+        display: grid;
+        grid-template-areas:
+            ' a b b'
+            ' c b b'
+        ;
+        gap: 1em;
+    }
+
+    .artistImageCard {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0px;
+        margin: 0;
+        flex-direction: column;
+
+
+        .image {
+            min-height: 35vh;
+            min-width: 25vw;
+            // max-width: 25vw;
+        }
+
+        div {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            min-width: 10vw;
+
+            span {
+                a {
+                    color: black;
+                    font-size: 3vh;
+                }
+            }
+        }
+    }
+
+    .button {
+        display: flex;
+        justify-content: flex-start;
+        padding-left: 2rem;
+
+    }
+
+    .bio {
+        grid-area: a;
+
+        p {
+            font-size: 1.7vh;
+            font-family: var(--text-family-body);
+            font-weight: 600;
+            letter-spacing: 0.01rem;
+            padding: 1em;
+        }
+
+        .socials {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 1em;
+
+
+            span {
+
+                a {
+                    text-decoration: none;
+                    color: var(--color-text-primary);
+                    font-size: 2vh;
+                    font-family: var(--text-family-body);
+
+                }
+            }
+        }
+    }
+
+    .releases {
+        grid-area: b;
+
+        .item {
+            padding: 3em;
+            min-width: 25rem;
+        }
+
+    }
+
+    .title {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+
+        ul {
+            display: flex;
+
+            li {
+                font-size: 1.5rem;
+            }
+        }
+    }
+
+    .btnMain {
+        color: var(--color-text-primary);
+        cursor: pointer;
+        padding: .5rem;
+        text-decoration: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .container {
+        .artistContents {
+            display: flex;
+            flex-direction: column;
+            flex-direction: column-reverse;
+            align-items: center;
+        }
+
+        .bio {
+            .socials {
+                min-width: 100%;
+            }
+        }
+    }
+}

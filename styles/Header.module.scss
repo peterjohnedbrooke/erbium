@@ -1,0 +1,29 @@
+@import '../style.scss';
+
+
+.navLogo {
+    // margin: 40px;
+    margin-top: 7px;
+    margin-left: 40px;
+    height: 80px;
+    width: 120px;
+    background-position: center;
+    background-size: contain;
+    transition: all 0.8s ease-in-out;
+    z-index: 999;
+    background-repeat: no-repeat;
+}
+
+.iconContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    width: 20vw;
+    color: cornflowerblue;
+
+
+}
+
+
+@media (max-width: 960px) {}

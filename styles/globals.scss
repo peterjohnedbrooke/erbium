@@ -1,0 +1,270 @@
+@font-face {
+  font-family: Sansumi-Regular;
+  src: url("../public/fonts/sansumi/Sansumi-Regular.ttf");
+}
+
+@font-face {
+  font-family: Sansumi-Bold;
+  src: url("../public/fonts/sansumi/Sansumi-Bold.ttf");
+}
+
+@font-face {
+  font-family: Sansumi-Demi-Bold;
+  src: url("../public/fonts/sansumi/Sansumi-DemiBold.ttf");
+}
+
+@font-face {
+  font-family: "Sansumi-Ultra-Light";
+  src: url("../public/fonts/sansumi/Sansumi-UltraLight.ttf");
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.custom-img {
+  background-image: url("https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+body,
+body[data-theme="light"] {
+  --color-text-primary: #0c0f17;
+  --color-text-secondary: #e3e3e3;
+  --color-bg-primary: #fff;
+  --color-bg-toggle: black;
+  --color-text-hover: #fa0d5e;
+  --color-box-primary: rgba(3, 8, 20, 0.1);
+}
+
+body[data-theme="dark"] {
+  --color-text-primary: #e3e3e3;
+  --color-text-secondary: #0c0f17;
+  --color-bg-primary: black;
+  --color-bg-toggle: #fff;
+  --color-text-hover: cornflowerblue;
+  --color-box-primary: rgba(227, 227, 227);
+}
+
+.themeToggleContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.logoContainer {
+  height: 60px;
+  width: 60px;
+}
+
+.toggleItems {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+
+  p {
+    color: var(--color-bg-primary);
+    font-size: 10px;
+    margin: 0;
+    padding: 5px;
+  }
+}
+
+
+body {
+  padding: 0;
+  margin: 0;
+  --text-family-primary: Sansumi-Regular !important;
+  --text-family-bold: Sansumi-Demi-Bold !important;
+  --text-family-secondary: 'Fjalla One', sans-serif;
+  --text-family-body: 'Cormorant Garamond', serif;
+  transition: background-color 0.25s ease-in-out;
+}
+
+.btnMain {
+  display: flex;
+  justify-content: space-evenly;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--text-family-primary);
+
+  .icon {
+    padding-right: 0.5rem;
+  }
+
+  p {
+    box-shadow: inset 0 0 0 0 var(--color-text-primary);
+    color: var(--color-text-primary);
+    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 0.2rem;
+    font-size: 1rem;
+    padding: 0.5em;
+  }
+
+  p:hover {
+    color: var(--color-text-secondary);
+    box-shadow: inset 200px 0 0 0 var(--color-text-primary);
+    ;
+  }
+
+}
+
+.effect-1 {
+  overflow: hidden;
+  background-color: var(--color-bg-primary);
+}
+
+.lightBulb,
+.moon {
+  color: var(--color-text-primary);
+  font-size: 1vw;
+  z-index: 2;
+
+  :hover {
+    color: var(--color-text-hover);
+    transition: color 1s ease-in-out;
+  }
+}
+
+// a {
+//   color: var(--color-text-primary);
+//   text-decoration: none;
+// }
+
+// * {
+//   box-sizing: border-box;
+// }
+
+.iconArrow {
+  transform: rotate(90deg);
+  font-weight: 200;
+}
+
+.lnk {
+  // background-color: aquamarine;
+  color: var(--color-text-primary);
+  transition: color 1s ease-in-out;
+  font-size: 1.5vw;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // transform: rotate(-25deg);
+  margin-top: 15px;
+}
+
+.lnk:hover {
+  list-style: none;
+  text-decoration: none;
+  color: var(--color-text-hover);
+  transition: color 1s ease-in-out;
+
+}
+
+
+
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: var(--color-text-primary);
+}
+
+p {
+  color: var(--color-text-primary);
+}
+
+button {
+  color: black !important;
+}
+
+
+.navLogo {
+  height: 10vh;
+  width: 15vw;
+  max-width: 150px;
+  background-position: center;
+  background-size: contain;
+  transition: all 0.8s ease-in-out;
+  z-index: 999;
+  position: sticky;
+}
+
+ul {
+  padding: 0 !important;
+}
+
+.cardBack {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 1s ease-in-out;
+  margin: 1rem;
+}
+
+.cardBack:hover {
+  transition: all 1s ease-in-out !important;
+}
+
+.card-img-overlay {
+  opacity: 0 !important;
+  color: white !important;
+  font-weight: 900;
+  letter-spacing: 0.5em;
+  background-color: black;
+
+  h5 {
+    color: white !important;
+  }
+
+  a {
+    color: white !important;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: white !important;
+  }
+}
+
+.card-img-overlay:hover {
+  opacity: 1 !important;
+  color: white !important;
+  cursor: pointer;
+}
+
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+
+  body {
+    color: white;
+    background: black;
+  }
+}
+
+@media (max-width: 960px) {
+
+  .lightBulb,
+  .moon {
+    color: var(--color-text-primary);
+    font-size: 5.5vw;
+  }
+}

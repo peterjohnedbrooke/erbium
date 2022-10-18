@@ -1,0 +1,371 @@
+.desktopNavBar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  font-family: var(--text-family-primary);
+  position: relative;
+
+  li {
+    padding-right: 2em;
+    text-decoration: none;
+  }
+
+  a {
+    box-shadow: inset 0 0 0 0 var(--color-text-primary);
+    color: var(--color-text-primary);
+    padding: 0 .5rem;
+    margin: 0 -.5rem;
+    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 0.3rem;
+    font-size: 1.1vh;
+    padding: 0.5em;
+  }
+
+  a:hover {
+    color: var(--color-text-secondary);
+    box-shadow: inset 200px 0 0 0 var(--color-text-primary);
+    ;
+  }
+}
+
+.sideNavBackground {
+  position: fixed;
+  left: 0%;
+  display: flex;
+  flex-direction: row;
+  background-color: transparent;
+  align-items: center;
+  justify-content: space-between;
+  top: 85vh;
+  width: 100vw;
+}
+
+.sideNavContainer {
+  background-color: cornflowerblue;
+  padding: 10px;
+  height: 100px;
+  border-radius: 5px;
+}
+
+
+.navBarContainerStatic,
+.navBarContainerScroll {
+  height: 80px;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  padding: 3em;
+  display: flex;
+  align-items: center;
+  z-index: 2;
+  transition: all 0.3s ease-in-out;
+  position: fixed;
+  flex-direction: row;
+  justify-content: space-between;
+  font-family: var(--text-family-primary);
+}
+
+.navBarContainerStatic {
+  background-color: transparent;
+}
+
+.navBarContainerScroll {
+  background-color: var(--color-bg-primary);
+}
+
+.navBarContainerRight {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.burgerIcon,
+.burgerIconHidden,
+.burgerIconPage {
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.8;
+}
+
+.burgerIcon,
+.burgerIconPage {
+  color: var(--color-text-primary);
+}
+
+.burgerInner {
+  width: 50px;
+}
+
+
+.sideNavLeftActive {
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  height: 100%;
+  width: 60%;
+  opacity: 0.7;
+  transition: all 1s ease-in-out;
+}
+
+.sideNavLeftHidden {
+  position: fixed;
+  top: 0%;
+  left: -60%;
+  height: 100%;
+  width: 0%;
+  transition: all 1s ease-in-out;
+}
+
+.sideNavRightActive {
+  position: fixed;
+  top: 0;
+  left: 60%;
+  height: 100%;
+  width: 40%;
+  background-color: var(--color-bg-primary);
+  transition: all 1s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 10px;
+  border-left: 2.5px solid var(--color-text-primary);
+
+
+  .rightNavBack {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 35%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-right: #C4D7F2 2px solid;
+  }
+
+}
+
+.sideNavRightHidden {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 60%;
+  height: 0%;
+  width: 40%;
+  transition: all 1s ease-in-out;
+  // border-left: 2.5px solid rgb(255, 255, 255, 0.8);
+  border-left: 2.5px solid var(--color-text-primary);
+}
+
+.rightSideList {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  // padding-right: 20px;
+
+  li {
+    list-style-type: none;
+    padding-top: 20%;
+    letter-spacing: 2px;
+  }
+
+  a {
+    z-index: 100;
+    color: var(--color-text-primary);
+    list-style: none;
+    text-decoration: none;
+    // font-size: 80px;
+    font-size: 2vw;
+    letter-spacing: 0.1rem;
+    font-weight: bold;
+    transition: 2s;
+    opacity: 1;
+    width: 80px;
+  }
+}
+
+.rightSideListHidden {
+  display: none;
+}
+
+
+.hoverMenuHidden {
+  top: 0;
+  left: -60%;
+  // display: none;
+  // transition: 0.8s ease-in-out;
+}
+
+.hoverMenuShow {
+  top: 0%;
+  left: 0%;
+  display: flex;
+  // z-index: 1;
+  height: 100%;
+  width: 60%;
+  align-items: center;
+  justify-content: center;
+  transition: all 1s ease-in-out;
+  position: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+.hoverMenuHidden {
+  // display:"none",
+  position: fixed;
+  top: 0;
+  left: -60%;
+  height: 100%;
+  width: 60%;
+  transition: all 1s ease-in-out;
+  background-position: center;
+  background-size: cover;
+}
+
+.rightMenuPopOut {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right: 40%;
+  height: 100%;
+  width: 15%;
+  position: fixed;
+  overflow: hidden;
+  object-fit: contain;
+  background-color: var(--color-bg-primary);
+  transition: all 0.8s ease-in-out;
+  border-left: var(--color-text-primary) solid 2px;
+  padding: 5rem;
+  // z-index: 9999;
+
+  .popOutListActive {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+  }
+
+  li {
+    list-style-type: none;
+    padding-top: 15%;
+  }
+
+  a {
+    width: 80px;
+    color: var(--color-text-primary);
+    list-style: none;
+    text-decoration: none;
+    letter-spacing: 0.2rem;
+    font-weight: bold;
+    font-size: 1vw;
+    opacity: 1;
+  }
+}
+
+.popOutListHidden {
+  position: relative;
+  display: none;
+
+  .popOutList {
+    display: none;
+
+  }
+
+  .popOutLink {
+    display: none;
+  }
+}
+
+.rightMenuPopOutHidden {
+  z-index: -1;
+  display: flex;
+  position: fixed;
+  overflow: hidden;
+  width: 0%;
+  right: 40%;
+  height: 100%;
+  transition: all 0.8s ease-in-out;
+}
+
+
+
+@media (max-width: 960px) {
+
+  .desktopNavBar {
+    display: none;
+  }
+
+  .navBarContainerRight {
+    display: flex;
+  }
+
+  .navBar {
+
+    .sideNavRightActive {
+      position: fixed;
+      top: 0;
+      left: 40%;
+      height: 100%;
+      width: 60%;
+
+      a {
+        font-size: 30px;
+      }
+    }
+
+    .sideNavRightHidden {
+      top: 0;
+      left: 40%;
+      width: 100%;
+
+    }
+
+
+
+    // .rightMenuPopOut {
+    //     // display: none;
+    // }
+
+
+    .navLogo {
+      color: var(--color-text-primary);
+      list-style-type: none !important;
+      text-decoration: none !important;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.5rem;
+
+      .navLogo:hover {
+        color: var(--color-text-hover) !important;
+      }
+    }
+
+    .sideNavLeftActive,
+    .rightMenuPopOut {
+      left: 0%;
+      width: 40%;
+      font-size: 30px;
+      // display: none;
+    }
+
+    .popOutListActive {
+      a {
+        font-size: 10px;
+      }
+    }
+
+
+    .rightMenuPopOutHidden {
+      left: 40%;
+    }
+  }
+}

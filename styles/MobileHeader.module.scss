@@ -1,0 +1,322 @@
+@import '../style.scss';
+
+.logoMove {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0%;
+    left: 5%;
+    transition: all 2s ease-in-out;
+    opacity: 0;
+    color: black;
+}
+
+.logoStatic {
+    position: fixed;
+    top: 50%;
+    left: 5%;
+    transition: all 2s ease-in-out;
+    color: white;
+}
+
+
+.logo {
+    background-size: contain;
+    width: 100px;
+    height: 100px;
+    top: 20%;
+    left: 2%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.navBarContainerRight {
+    // position: fixed;
+    padding-right: 5vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 5%;
+    right: 5%;
+    z-index: 999;
+    height: 100px;
+}
+
+.burgerIcon,
+.burgerIconHidden,
+.burgerIconPage {
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+}
+
+.burgerIcon {
+    color: $primaryFontColor;
+    transition: color 1s ease-in-out;
+
+}
+
+.burgerIcon:hover {
+    color: cornflowerblue;
+    transition: color 1s ease-in-out;
+}
+
+.burgerInner {
+    color: #fa0d5e;
+    z-index: 10;
+}
+
+.burgerInner {
+    // border: 2px solid white;
+    width: 100px;
+}
+
+
+.sideNavLeftActive {
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    height: 100%;
+    width: 60%;
+    background-color: $primaryBackgroundColor;
+    opacity: 0.7;
+    transition: all 1s ease-in-out;
+}
+
+.sideNavLeftHidden {
+    position: fixed;
+    top: 0%;
+    left: -60%;
+    height: 100%;
+    width: 0%;
+    transition: all 1s ease-in-out;
+}
+
+.sideNavRightActive {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background-color: $primaryBackgroundColor;
+    transition: all 1s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 10px;
+    border-left: 2.5px solid white;
+
+
+    .rightNavBack {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 35%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        border-right: #C4D7F2 2px solid;
+    }
+
+}
+
+.sideNavRightHidden {
+    display: flex;
+    position: fixed;
+    top: 0;
+    right: -5%;
+    height: 100%;
+    width: 0%;
+    transition: all 1s ease-in-out;
+    // border-left: 2.5px solid rgb(255, 255, 255, 0.8);
+    border-left: 2.5px solid white;
+}
+
+.rightSideList {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    // padding-right: 20px;
+
+    li {
+        list-style-type: none;
+        padding-top: 20%;
+        letter-spacing: 2px;
+    }
+
+    a {
+        z-index: 100;
+        color: $primaryFontColor;
+        list-style: none;
+        text-decoration: none;
+        font-size: 6vw;
+        letter-spacing: 0.1rem;
+        font-weight: bold;
+        transition: 2s;
+        opacity: 1;
+        width: 80px;
+    }
+}
+
+.rightSideListHidden {
+    display: none;
+}
+
+.hoverOneMenu,
+.hoverTwoMenu,
+.hoverThreeMenu,
+.hoverFourMenu {
+    top: 0%;
+    left: 0;
+    display: flex;
+    z-index: 1;
+    height: 100%;
+    width: 60%;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s ease-in;
+    position: fixed;
+}
+
+.hoverOneMenu {
+    background-color: #4392F1;
+}
+
+.hoverTwoMenu {
+    background-color: #770CFA;
+}
+
+.hoverThreeMenu {
+    background-color: #4392F1;
+}
+
+.hoverFourMenu {
+    background-color: #fa0d5e;
+}
+
+.hoverMenuHidden {
+    top: 0;
+    left: -60%;
+    // display: none;
+    // transition: 0.8s ease-in-out;
+}
+
+.rightMenuPopOut {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: 40%;
+    height: 100%;
+    width: 20%;
+    position: fixed;
+    overflow: hidden;
+    object-fit: contain;
+    background-color: #fa0d5e;
+    transition: all 0.8s ease-in-out;
+    border-left: white solid 2px;
+    padding: 5rem;
+    z-index: 9999;
+
+    .popOutListActive {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+    }
+
+    li {
+        list-style-type: none;
+        padding-top: 15%;
+    }
+
+    a {
+        width: 80px;
+        color: #fa0d5e;
+        list-style: none;
+        text-decoration: none;
+        letter-spacing: 0.2rem;
+        font-weight: bold;
+        font-size: 1.8vw;
+        opacity: 1;
+    }
+}
+
+.popOutListHidden {
+    position: relative;
+    display: none;
+
+    .popOutList {
+        display: none;
+    }
+
+    .popOutLink {
+        display: none;
+    }
+}
+
+.rightMenuPopOutHidden {
+    z-index: -1;
+    display: flex;
+    position: fixed;
+    overflow: hidden;
+    width: 0%;
+    right: 40%;
+    height: 100%;
+    transition: all 0.8s ease-in-out;
+}
+
+
+@media (max-width: 960px) {
+
+    .navBar {
+
+        .sideNavRightActive {
+            position: fixed;
+            top: 0;
+            left: 40%;
+            height: 100%;
+            width: 60%;
+
+            a {
+                font-size: 50px;
+            }
+        }
+
+        .sideNavRightHidden {
+            top: 0;
+            left: 40%;
+            width: 100%;
+
+        }
+
+        // .rightMenuPopOut {
+        //     // display: none;
+        // }
+
+
+
+        .sideNavLeftActive,
+        .rightMenuPopOut {
+            left: 0%;
+            width: 40%;
+            font-size: 30px;
+            // display: none;
+        }
+
+        .popOutListActive {
+            a {
+                font-size: 10px;
+            }
+        }
+
+
+        .rightMenuPopOutHidden {
+            left: 40%;
+        }
+    }
+}

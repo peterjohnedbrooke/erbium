@@ -1,0 +1,61 @@
+.item {
+    padding: 2em;
+    max-width: 20rem;
+
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 3rem;
+        color: #fff;
+        width: 100%;
+        transition: all 500ms;
+        overflow: hidden;
+    }
+
+
+    .cardInfo {
+        display: flex;
+        flex-direction: column;
+        align-self: baseline;
+        padding: 1rem;
+        background-color: var(--color-bg-primary);
+
+        div {
+            display: flex;
+            flex-direction: column;
+        }
+
+        h5,
+        p {
+            // line-height: 0.9rem;
+            font-family: var(--text-family-primary);
+            letter-spacing: 0.3rem;
+            color: var(--color-text-primary);
+            padding: 0rem;
+            margin: 0rem;
+        }
+
+        h5 {
+            font-size: 1vh;
+            font-weight: 700;
+        }
+
+        p {
+            font-size: 0.8vh;
+            font-weight: 600;
+            column-count: 2;
+        }
+
+    }
+
+    .overlayText {
+        font-size: 1.5vh;
+        letter-spacing: 0em;
+        font-weight: 600;
+        font-family: var(--text-family-primary);
+    }
+
+}
