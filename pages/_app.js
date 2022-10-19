@@ -1,5 +1,24 @@
 import DesktopNav from "../components/DesktopNav";
 import "../styles/globals.scss";
+import "../styles/AlbumCard.module.scss";
+import "../styles/AlbumPage.module.scss";
+import "../styles/Albums.module.scss";
+import "../styles/ArtistCard.module.scss";
+import "../styles/ArtistPage.module.scss";
+import "../styles/Artists.module.scss";
+import "../styles/Carousel.module.scss";
+import "../styles/ContentWrapper.module.scss";
+import "../styles/DesktopNav.module.scss";
+import "../styles/Footer.module.scss";
+import "../styles/Header.module.scss";
+import "../styles/Home.module.scss";
+import "../styles/LatestReleases.module.scss";
+import "../styles/Links.module.scss";
+import "../styles/MobileHeader.module.scss";
+import "../styles/NavLogo.module.scss";
+import "../styles/PageLabel.module.scss";
+import "../styles/Transition.module.scss";
+
 import App from "next/app";
 import "bootstrap/dist/css/bootstrap.css";
 import { useEffect } from "react";
