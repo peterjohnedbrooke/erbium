@@ -27,6 +27,37 @@ html {
   scroll-behavior: smooth;
 }
 
+.carousel {
+  overflow: hidden;
+}
+
+.carousel-control-prev {
+  height: 80% !important;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  // height: max-content;
+  background-color: #fa0d5e;
+  border-radius: 5px;
+  margin: -10%;
+}
+
+.carousel-control-next {
+  height: 80% !important;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  visibility: hidden;
+}
+
+.carousel:hover,
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  visibility: visible;
+}
+
 body,
 body[data-theme="light"] {
   --color-text-primary: #0c0f17;

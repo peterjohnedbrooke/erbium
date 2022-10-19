@@ -11,6 +11,8 @@ import styled from "@emotion/styled";
 import dynamic from "next/dynamic";
 import PageLabel from "../components/PageLabel";
 import { useRouter } from "next/router";
+import { Carousel } from "react-bootstrap";
+import ReactPlayer from "react-player";
 
 const URL = process.env.STRAPIBASEURL;
 
@@ -27,15 +29,20 @@ export async function getStaticProps() {
   );
   const video = await resVideo.json();
 
+  const resCarousel = await fetch(
+    "https://erbiumbackend.herokuapp.com/api/landing-carousels?populate=*"
+  );
+
+  const carousel = await resCarousel.json();
+
   return {
-    props: { artists, video },
+    props: { artists, video, carousel },
   };
 }
 
-export default function Home({ artists, video }) {
+export default function Home({ artists, video, carousel }) {
   const title = "Erbium Records";
-
-  console.log(video);
+  console.log(carousel);
   if (artists) {
     return (
       <div>
@@ -44,15 +51,32 @@ export default function Home({ artists, video }) {
         </Head>
         <ContentWrapper>
           <div className={styles.landingContainer}>
-            {/* <div>
-              <h3>Mining rare earth elements</h3>
-              <h5>driven by like-minded creators</h5>
-            </div> */}
-            <video
-              src={video.data.attributes.Video.data[0].attributes.url}
-              autoPlay
-              loop
-            />
+            <video autoPlay loop muted playsInline>
+              <source
+                src={video.data.attributes.Video.data[0].attributes.url}
+              />
+            </video>
+
+            {/* <Carousel controls={false} indicators={false} interval={4000}>
+              {carousel.data.map((video, i) => {
+                return (
+                  <Carousel.Item key={i}>
+                    <video controls autoPlay loop muted playsInline>
+                      <source
+                        src={video.attributes.Media.data[0].attributes.url}
+                      />
+                    </video>
+                    <video
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      src={video.attributes.Media.data[0].attributes.url}
+                    />
+                  </Carousel.Item>
+                );
+              })}
+            </Carousel> */}
           </div>
         </ContentWrapper>
         <Footer />

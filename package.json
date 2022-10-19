@@ -27,6 +27,7 @@
     "react-bootstrap": "^2.5.0",
     "react-dom": "18.2.0",
     "react-media": "^1.10.0",
+    "react-player": "^2.11.0",
     "remark": "^14.0.2",
     "remark-html": "^15.0.1",
     "sass": "^1.54.9"
