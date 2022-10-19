@@ -22,14 +22,20 @@ export async function getStaticProps() {
   );
   const artists = await res.json();
 
+  const resVideo = await fetch(
+    "https://erbiumbackend.herokuapp.com/api/landing-video?populate=*"
+  );
+  const video = await resVideo.json();
+
   return {
-    props: { artists },
+    props: { artists, video },
   };
 }
 
-export default function Home({ artists }) {
+export default function Home({ artists, video }) {
   const title = "Erbium Records";
 
+  console.log(video);
   if (artists) {
     return (
       <div>
@@ -42,6 +48,11 @@ export default function Home({ artists }) {
               <h3>Mining rare earth elements</h3>
               <h5>driven by like-minded creators</h5>
             </div> */}
+            <video
+              src={video.data.attributes.Video.data[0].attributes.url}
+              autoPlay
+              loop
+            />
           </div>
         </ContentWrapper>
         <Footer />
