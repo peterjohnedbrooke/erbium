@@ -2,8 +2,8 @@
     display: flex;
     flex-direction: column;
     max-width: 1500px;
-    gap: 1rem;
     padding: 3em;
+    // min-width: 80vw;
 
 
     .cardTitle,
@@ -157,7 +157,7 @@
 }
 
 @media screen and (max-width: 600px) {
-    .container {
+    .artistPageContainer {
         .artistContents {
             display: flex;
             flex-direction: column;

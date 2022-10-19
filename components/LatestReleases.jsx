@@ -16,7 +16,7 @@ const LatestReleases = ({album, arrowReturn}) => {
     const [click, setClick] = useState(false)
 
   return (
-    <div className={styles.item}>
+    <div className={styles.releasesItem}>
         <div className={styles.card}>
           <Link key={id} href={"albums/" + slug} >
             <Card key={id} className={`rounded-0 border-0 d-flex ${styles.cardBack}`}>
