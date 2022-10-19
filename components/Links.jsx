@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../styles/Links.module.scss";
+import styles from "../styles/Home.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBandcamp, faSoundcloud } from "@fortawesome/free-brands-svg-icons";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";

@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 import {motion, AnimatePresence} from "framer-motion"
-import styles from "../styles/Transition.module.scss"
+import styles from "../styles/Home.module.scss"
 
 const variants = {
     out: {

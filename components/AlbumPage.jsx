@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from "../styles/AlbumPage.module.scss"
+import styles from "../styles/Home.module.scss"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowTurnDown } from "@fortawesome/free-solid-svg-icons";
 import Link from 'next/link'

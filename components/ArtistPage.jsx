@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from "../styles/ArtistPage.module.scss"
+import styles from "../styles/Home.module.scss"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBandcamp, faSoundcloud, faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { faSearch, faArrowTurnDown } from "@fortawesome/free-solid-svg-icons";
@@ -22,8 +22,8 @@ const ArtistPage = ({artist}) => {
     const socials = artist.attributes.socials;
 
   return (
-    <div className={styles.container}>
-        <div className={`${styles.button}`}>
+    <div className={styles.artistPageContainer}>
+        <div className={styles.button}>
             <BackButton text="ALL ARTISTS"/>
         </div>
         

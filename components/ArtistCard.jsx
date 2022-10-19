@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Link from "next/link";
-import styles from "../styles/ArtistCard.module.scss";
+import styles from "../styles/Home.module.scss";
 import { Row, Col, Card, Button } from 'react-bootstrap';
 import Animation from "./Animate";
 

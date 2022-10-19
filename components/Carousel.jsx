@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from "../styles/Carousel.module.scss";
+import styles from "../styles/Home.module.scss";
 
 export default function Carousel({children}) {
   return (

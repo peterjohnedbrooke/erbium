@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import styles from "../styles/MobileHeader.module.scss";
+import styles from "../styles/Home.module.scss";
 import Hamburger from "hamburger-react";
 import Link from "next/link";
 

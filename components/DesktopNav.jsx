@@ -1,6 +1,6 @@
 import { React, useState, useEffect } from "react";
 import Link from "next/link";
-import styles from "../styles/DesktopNav.module.scss";
+import styles from "../styles/Home.module.scss";
 import Hamburger from "hamburger-react";
 import NavLogo from "./NavLogo";
 import Scroll from "./Scroll";

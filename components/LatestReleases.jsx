@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import styles from "../styles/LatestReleases.module.scss"
+import styles from "../styles/Home.module.scss"
 import Link from 'next/link';
 import {Card} from "react-bootstrap"
 

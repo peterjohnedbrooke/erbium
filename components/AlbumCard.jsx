@@ -1,13 +1,13 @@
 import React from "react";
 import Link from "next/link";
-import styles from "../styles/AlbumCard.module.scss";
+import styles from "../styles/Home.module.scss";
 import { Row, Col, Card, Button } from 'react-bootstrap';
 import Animation from "./Animate";
 
 export default function AlbumCard({ Title, Description, Slug, album, id }) {
   return (
     <Animation>
-        <div key={id} className={styles.card}>
+        <div key={id} className={styles.albumCard}>
           <Link key={id} href={"albums/" + Slug} >
             <Card key={id} className={`rounded-0 border-0 d-flex ${styles.cardBack}`}>
               <Card.Img src={album.attributes.Image.data[0].attributes.url} className={`rounded-0 card-img ${styles.cardImg}`}/>
