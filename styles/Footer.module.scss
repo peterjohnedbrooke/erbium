@@ -4,8 +4,8 @@
     left: 0;
     right: 0;
     padding: 1em;
-    height: 300px;
-    background-color: #eeeeee;
+    height: 25vh;
+    background-color: black;
     position: absolute;
     display: flex;
     z-index: 2;
@@ -22,7 +22,7 @@
     }
 
     .title {
-        color: black;
+        color: white;
         font-family: var(--text-family-primary);
         transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
         text-decoration: none;
@@ -46,7 +46,7 @@
                 text-decoration: none;
                 list-style-type: none;
                 font-size: 1.5vh;
-                color: black;
+                color: white;
             }
         }
     }
