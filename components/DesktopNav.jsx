@@ -215,7 +215,8 @@ export default function DesktopNav({navImages, navLogo}) {
             </li>
           </ul>
         </div>
-        <PageLabel/>
+        
+        <PageLabel click={click}/> 
         <Links />
       </div>
    

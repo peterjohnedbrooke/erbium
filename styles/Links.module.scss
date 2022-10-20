@@ -41,10 +41,10 @@
 }
 
 @media (max-width: 960px) {
-    .lnkContainer {
+    .linkWrapper {
 
-        .lnk {
-            font-size: 7vw;
+        .linkContainer {
+            background-color: var(--color-bg-primary);
         }
 
     }

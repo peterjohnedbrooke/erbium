@@ -11,13 +11,14 @@
     justify-content: space-evenly;
     align-items: center;
     writing-mode: vertical-lr;
-    z-index: -1;
+    font-family: var(--text-family-primary);
 
     .pageLabelContainer {
         display: flex;
         align-items: center;
         justify-content: space-evenly;
         height: 80vh;
+        width: 100%;
     }
 
 
@@ -30,20 +31,12 @@
         letter-spacing: 0.3rem;
         font-size: 0.9vh;
     }
-
-    a:hover {
-        // color: white;
-        // box-shadow: inset 200px 0 0 0 var(--color-text-hover);
-
-    }
 }
 
 @media (max-width: 960px) {
-    .lnkContainer {
-
-        .lnk {
-            font-size: 5vw;
+    .pageLabelWrapper {
+        .pageLabelContainer {
+            background-color: var(--color-bg-primary);
         }
-
     }
 }
