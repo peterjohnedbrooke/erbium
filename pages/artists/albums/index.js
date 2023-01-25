@@ -36,7 +36,7 @@ export default function Albums({ albums }) {
     setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth);
   }, []);
 
-  const reverseAlbums = albums.data.map((album) => album).reverse();
+  const reverseAlbums = albums.map((album) => album).reverse();
   if (!!albums) {
     return (
       <div>
