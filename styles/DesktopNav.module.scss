@@ -21,7 +21,7 @@
     font-weight: 600;
     letter-spacing: 0.3rem;
     padding: 0.5em;
-    font-size: 1.4vh;
+    // font-size: 1.4vh;
 
   }
 
@@ -59,7 +59,7 @@
 
 .navBarContainerStatic,
 .navBarContainerScroll {
-  height: 100px;
+  height: 120px;
   width: 100vw;
   top: 0;
   left: 0;
@@ -270,7 +270,7 @@
     text-decoration: none;
     letter-spacing: 0.2rem;
     font-weight: bold;
-    font-size: 1vw;
+    // font-size: 1vw;
     opacity: 1;
   }
 }
@@ -322,7 +322,7 @@
       width: 60%;
 
       a {
-        font-size: 30px;
+        // font-size: 30px;
       }
     }
 
@@ -344,7 +344,7 @@
       color: var(--color-text-primary);
       list-style-type: none !important;
       text-decoration: none !important;
-      font-size: 1rem;
+      // font-size: 1rem;
       font-weight: 700;
       letter-spacing: 0.5rem;
 
@@ -357,13 +357,13 @@
     .rightMenuPopOut {
       left: 0%;
       width: 40%;
-      font-size: 30px;
+      // font-size: 30px;
       // display: none;
     }
 
     .popOutListActive {
       a {
-        font-size: 10px;
+        // font-size: 10px;
       }
     }
 
