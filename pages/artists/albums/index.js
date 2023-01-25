@@ -8,18 +8,24 @@ import Hero from "../../../components/Hero";
 import { motion } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import { createClient } from "contentful";
+import safeJsonStringify from 'safe-json-stringify';
 
 export async function getStaticProps() {
-  // get albums from out api (strapi)
+  const client = createClient({
+    space: process.env.CONTENTFUL_SPACE_ID  ,
+    accessToken: process.env.CONTENTFUL_ACCESS_ID
+  });
 
-  // const res = await fetch(
-  //   "https://erbiumbackend.herokuapp.com/api/albums?populate=*"
-  // );
-  // const albums = await res.json();
+  const res = await client.getEntries({ content_type: 'album'})
+  const stringifiedData = safeJsonStringify(res.items);
+  const artists = JSON.parse(stringifiedData);
 
-  // return {
-  //   props: { albums },
-  // };
+  return {
+    props: {
+      albums
+    }
+  }
 }
 
 export default function Albums({ albums }) {
@@ -51,18 +57,18 @@ export default function Albums({ albums }) {
                 className={styles.innerCarousel}
               >
                 {reverseAlbums.map((album, i) => {
-                  const { Title, Description } = album.attributes;
+                  const { title, description } = album.fields;
                   const id = album.id;
-                  const { Image } =
-                    album.attributes.Image.data[0].attributes.url;
+                  const { image } =
+                    album.fields.image.fields.file.url;
                   return (
                     <motion.div key={id} className={styles.item}>
                       <AlbumCard
                         album={album}
-                        Title={Title}
-                        Descriptiom={Description}
-                        Slug={`${album.attributes.Slug}`}
-                        Image={Image}
+                        Title={title}
+                        Description={description}
+                        Slug={`${album.fields.Slug}`}
+                        Image={image}
                         id={id}
                         key={i}
                       />
