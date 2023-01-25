@@ -1,56 +1,47 @@
 import React from "react";
 import styles from "../styles/Home.module.scss";
+import Links from "./Links";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBandcamp, faInstagram, faSoundcloud, faTwitter } from "@fortawesome/free-brands-svg-icons";
 
 export default function Footer() {
+  const soundCloud = <FontAwesomeIcon className={styles.icons} icon={faSoundcloud} />;
+  const twitter = <FontAwesomeIcon className={styles.icons} icon={faTwitter} />;
+  const bandCamp = <FontAwesomeIcon className={styles.icons} icon={faBandcamp} />;
+  const insta = <FontAwesomeIcon className={styles.icons} icon={faInstagram} />;
   return (
     <div className={styles.wrapper}>
       <div className={styles.footerContainer}>
-      <div className={styles.tagline}>
-        <h3 className={styles.title}>&copy;ERBIUM RECORDS 2022</h3>
-      </div>
-      <div className={styles.bottomNav}>
-        <h2 className={styles.title}>INFO</h2>
-        <ul>
-          <li>
-            <a href="">Contact</a>
-          </li>
-          <li>
-            <a href="">Events</a>
-          </li>
-        </ul>
-      </div>
-      <div className={styles.bottomNav}>
-        <h3 className={styles.title}>CONNECT</h3>
-        <ul>
-          <li>
-            <a href="">Soundcloud</a>
-          </li>
-          <li>
-            <a href="">Bandcamp</a>
-          </li>
-          <li>
-            <a href="">Instagram</a>
-          </li>
-          <li>
-            <a href="">Spotify</a>
-          </li>
-          <li>
-            <a href="">Twitter</a>
-          </li>
-          <li>
-            <a href="">Youtube</a>
-          </li>
-        </ul>
-      </div>
-      <div className={styles.subscribe}>
-        <h3 className={styles.title}>NEWSLETTER</h3>
-        <div>
-          <input type="text" name="" id="" placeholder="Email" />
-          <button className={`${styles.title}`}>Submit</button>
+        <div className={styles.bottomNav}>
+          <h3 className={styles.title}>CONNECT</h3>
+          <ul>
+            <li>
+            <a rel="noopener noreferrer" target="_blank" href="https://erbiumrecords.bandcamp.com/" >
+              {bandCamp}
+            </a>
+            </li>
+            <li>
+              <a rel="noopener noreferrer"target="_blank"  href="https://soundcloud.com/erbium-records">
+                {soundCloud}
+              </a>
+            </li>
+            <li>
+              <a rel="noopener noreferrer"target="_blank"  href="https://twitter.com/erbiumrecords">
+                {twitter}
+              </a>
+            </li>
+            <li>
+              <a rel="noopener noreferrer"target="_blank"  href="https://www.instagram.com/erbiumrecords/?hl=en">
+                {insta}
+              </a>
+            </li>
+          </ul>
         </div>
-        <h3 className={styles.title}>&copy;SITE BY ICONIKS</h3>
+        <div className={styles.tagline}>
+          <h5 className={styles.title}>&copy;ERBIUM RECORDS 2022</h5>
+          <h5 className={styles.title}>&copy;SITE BY ICONIKS</h5>
+        </div>
       </div>
-    </div>
     </div>
     
   ) 
