@@ -140,13 +140,13 @@ export default function MobileHeader() {
               </a>
             </Link>
           </li>
-          <li>
+          {/* <li>
             <Link href="/events">
               <a onMouseEnter={handleHoverThree} onClick={handleExit}>
                 events.
               </a>
             </Link>
-          </li>
+          </li> */}
         </ul>
       </div>
     </>

@@ -40,36 +40,36 @@ export default function Artist({ artist }) {
 // tell next.js how many pages there are
 
 export async function getStaticPaths() {
-  const res = await fetch("https://erbiumbackend.herokuapp.com/api/artists");
+  // const res = await fetch("https://erbiumbackend.herokuapp.com/api/artists");
 
-  const artists = await res.json();
+  // const artists = await res.json();
 
-  const paths = artists.data.map((artist) => ({
-    params: { slug: artist.attributes.Slug },
-  }));
+  // const paths = artists.data.map((artist) => ({
+  //   params: { slug: artist.attributes.Slug },
+  // }));
 
-  return {
-    paths,
-    fallback: true,
-  };
+  // return {
+  //   paths,
+  //   fallback: true,
+  // };
 }
 
 //for each individual page: get the data for that page
 
 export async function getStaticProps({ params }) {
-  const { slug } = params;
+  // const { slug } = params;
 
-  const res = await fetch(
-    `https://erbiumbackend.herokuapp.com/api/artists?filters[Slug][$eq]=${slug}&populate[Image][fields][1]=url`
-  );
-  const artistData = await res.json();
-  const artist = artistData.data[0];
+  // const res = await fetch(
+  //   `https://erbiumbackend.herokuapp.com/api/artists?filters[Slug][$eq]=${slug}&populate[Image][fields][1]=url`
+  // );
+  // const artistData = await res.json();
+  // const artist = artistData.data[0];
 
-  if (!res) {
-    return { notFound: true };
-  }
+  // if (!res) {
+  //   return { notFound: true };
+  // }
 
-  return {
-    props: { artist },
-  };
+  // return {
+  //   props: { artist },
+  // };
 }

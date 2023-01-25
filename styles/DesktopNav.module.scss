@@ -176,7 +176,7 @@
   li {
     list-style-type: none;
     padding-top: 20%;
-    letter-spacing: 2px;
+    // letter-spacing: 2px;
   }
 
   a {
@@ -185,10 +185,8 @@
     list-style: none;
     text-decoration: none;
     // font-size: 80px;
-    font-size: 2vw;
-    letter-spacing: 0.1rem;
     font-weight: bold;
-    transition: 2s;
+    transition: 1s;
     opacity: 1;
     width: 80px;
   }
@@ -202,8 +200,6 @@
 .hoverMenuHidden {
   top: 0;
   left: -60%;
-  // display: none;
-  // transition: 0.8s ease-in-out;
 }
 
 .hoverMenuShow {

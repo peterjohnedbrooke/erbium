@@ -12,14 +12,14 @@ import { useRouter } from "next/router";
 export async function getStaticProps() {
   // get albums from out api (strapi)
 
-  const res = await fetch(
-    "https://erbiumbackend.herokuapp.com/api/albums?populate=*"
-  );
-  const albums = await res.json();
+  // const res = await fetch(
+  //   "https://erbiumbackend.herokuapp.com/api/albums?populate=*"
+  // );
+  // const albums = await res.json();
 
-  return {
-    props: { albums },
-  };
+  // return {
+  //   props: { albums },
+  // };
 }
 
 export default function Albums({ albums }) {

@@ -161,12 +161,6 @@ export default function DesktopNav({navLogo}) {
               <Link href="/artists/albums" ><a>RELEASES.</a></Link>
             </li>
             <li>
-              <Link href="/news"><a>NEWS.</a></Link>
-            </li>
-            <li>
-              <Link href="/events" ><a>EVENTS.</a></Link>
-            </li>
-            <li>
               <Link href="/about"><a>ABOUT.</a></Link>
             </li>
             <li>
@@ -184,22 +178,22 @@ export default function DesktopNav({navLogo}) {
         <div className={click ? `${styles.sideNavRightActive}` : `${styles.sideNavRightHidden}`}>
           <ul className={click ? `${styles.rightSideList}` : `${styles.rightSideListHidden}`}>
             <li>
-              <Link href="/"><a onClick={handleExitHome}>HOME.</a></Link>
-            </li>
-            <li>
                 <Link href="/artists"><a onClick={handleExit}>ARTISTS.</a></Link>
             </li>
             <li>
               <Link href="/artists/albums" ><a onClick={handleExit}>RELEASES.</a></Link>
             </li>
-            <li>
+            {/* <li>
               <Link href="/news" ><a onClick={handleExit}>NEWS.</a></Link>
             </li>
             <li>
               <Link href="/events" ><a onClick={handleExit}>EVENTS.</a></Link>
-            </li>
+            </li> */}
             <li>
               <Link href="/about" ><a onClick={handleExit}>ABOUT.</a></Link>
+            </li>
+            <li>
+              <a href="https://erbiumrecords.bandcamp.com/music" target="_blank" rel="noopener noreferrer">STORE.</a>
             </li>
           </ul>
         </div>
