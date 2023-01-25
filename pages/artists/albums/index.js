@@ -19,7 +19,7 @@ export async function getStaticProps() {
 
   const res = await client.getEntries({ content_type: 'album'})
   const stringifiedData = safeJsonStringify(res.items);
-  const artists = JSON.parse(stringifiedData);
+  const albums = JSON.parse(stringifiedData);
 
   return {
     props: {
