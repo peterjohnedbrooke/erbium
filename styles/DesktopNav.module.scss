@@ -2,13 +2,12 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   z-index: 2;
-  font-family: var(--text-family-primary);
   position: relative;
 
   li {
-    padding-right: 2em;
+    // padding-right: 2em;
     text-decoration: none;
   }
 
@@ -31,6 +30,11 @@
     box-shadow: inset 200px 0 0 0 var(--color-text-primary);
     ;
   }
+}
+
+.navWrapper {
+  width: 100%;
+  // padding: 2rem;
 }
 
 .sideNavBackground {

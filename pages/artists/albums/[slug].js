@@ -17,7 +17,6 @@ export default function Album({ album }) {
         <Head>
           <title>{album.fields.title}</title>
         </Head>
-        {/* <DesktopNav navImages={navImages} /> */}
         <Hero />
         <ContentWrapper>
           <AlbumPage album={album} />

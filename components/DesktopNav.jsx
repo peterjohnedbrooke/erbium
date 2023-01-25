@@ -150,26 +150,28 @@ export default function DesktopNav({navLogo}) {
 
 
   return (
-   
       <div className={ navColor ? `${styles.navBarContainerScroll}` : `${styles.navBarContainerStatic}`}>
-        <NavLogo  navLogo={navLogo}/>
-        <ul className={styles.desktopNavBar}>
-            <li>
-                <Link href="/artists"><a>ARTISTS.</a></Link>
-            </li>
-            <li>
-              <Link href="/artists/albums" ><a>RELEASES.</a></Link>
-            </li>
-            <li>
-              <Link href="/about"><a>ABOUT.</a></Link>
-            </li>
-            <li>
-              <a href="https://erbiumrecords.bandcamp.com/music" target="_blank" rel="noopener noreferrer">STORE.</a>
-            </li>
-            <li>
-            <ThemeToggle/>
-            </li>
-          </ul>
+        <div className={styles.navWrapper}>
+          <NavLogo  navLogo={navLogo}/>
+          <ul className={styles.desktopNavBar}>
+              <li>
+                  <Link href="/artists"><a>ARTISTS.</a></Link>
+              </li>
+              <li>
+                <Link href="/artists/albums" ><a>RELEASES.</a></Link>
+              </li>
+              <li>
+                <Link href="/about"><a>ABOUT.</a></Link>
+              </li>
+              <li>
+                <a href="https://erbiumrecords.bandcamp.com/music" target="_blank" rel="noopener noreferrer">STORE.</a>
+              </li>
+              {/* <li>
+              <ThemeToggle/>
+              </li> */}
+            </ul>
+        </div>
+       
         <div className={styles.navBarContainerRight}>
           <div className={click ? `${styles.burgerIconPage}` : `${styles.burgerIcon}`} onClick={handleClick}>
             <Hamburger size={25} className={styles.burgerInner} toggled={isOpen} rounded toggle ={setOpen} />
@@ -198,8 +200,8 @@ export default function DesktopNav({navLogo}) {
           </ul>
         </div>
         
-        <PageLabel click={click}/> 
-        <Links />
+        {/* <PageLabel click={click}/> 
+        <Links /> */}
       </div>
    
   );

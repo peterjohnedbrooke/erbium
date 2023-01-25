@@ -65,7 +65,7 @@ export default function Albums({ albums }) {
                         album={album}
                         Title={title}
                         Description={description}
-                        Slug={`${album.fields.Slug}`}
+                        Slug={album.fields.slug}
                         id={id}
                         key={i}
                       />
