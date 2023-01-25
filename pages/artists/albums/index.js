@@ -59,8 +59,8 @@ export default function Albums({ albums }) {
                 {reverseAlbums.map((album, i) => {
                   const { title, description } = album.fields;
                   const id = album.id;
-                  const { image } =
-                    album.fields.image.fields.file.url;
+                  // const { image } =
+                  //   album.fields.image.fields.file.url;
                   return (
                     <motion.div key={id} className={styles.item}>
                       <AlbumCard
@@ -68,7 +68,7 @@ export default function Albums({ albums }) {
                         Title={title}
                         Description={description}
                         Slug={`${album.fields.Slug}`}
-                        Image={image}
+                        // Image={image}
                         id={id}
                         key={i}
                       />
