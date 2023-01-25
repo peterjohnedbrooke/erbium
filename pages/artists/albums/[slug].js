@@ -6,18 +6,21 @@ import Footer from "../../../components/Footer";
 import Hero from "../../../components/Hero";
 import styles from "../../../styles/AlbumPage.module.scss";
 import markdownToHtml from "../../../src/lib/markdownToHtml";
+import { createClient } from "contentful";
+import safeJsonStringify from 'safe-json-stringify';
 
-export default function Album({ album, description }) {
-  if (!!album && !!description) {
+
+export default function Album({ album }) {
+  if (!!album) {
     return (
       <div>
         <Head>
-          <title>{album.attributes.Title}</title>
+          <title>{album.fields.title}</title>
         </Head>
         {/* <DesktopNav navImages={navImages} /> */}
         <Hero />
         <ContentWrapper>
-          <AlbumPage album={album} description={description} />
+          <AlbumPage album={album} />
         </ContentWrapper>
         <Footer />
       </div>
@@ -26,35 +29,34 @@ export default function Album({ album, description }) {
   return null;
 }
 
+const client = createClient({
+  space: process.env.CONTENTFUL_SPACE_ID  ,
+  accessToken: process.env.CONTENTFUL_ACCESS_ID
+});
+
 export async function getStaticPaths() {
-  const res = await fetch("https://erbiumbackend.herokuapp.com/api/albums");
+  const res = await client.getEntries({ content_type: 'album'})
+  const stringifiedData = safeJsonStringify(res.items);
+  const data = JSON.parse(stringifiedData);
 
-  const albums = await res.json();
-
-  const paths = albums.data.map((artist) => ({
-    params: { slug: artist.attributes.Slug },
-  }));
+  const paths = data.map((item => {
+    return {
+      params: {slug: item.fields.slug}
+    }
+  }))
 
   return {
-    paths,
-    fallback: true,
-  };
+    paths, 
+    fallback: false
+  }
 }
 
-//for each individual page: get the data for that page
-
-export async function getStaticProps({ params }) {
-  const { slug } = params;
-
-  const res = await fetch(
-    `https://erbiumbackend.herokuapp.com/api/albums?filters[Slug][$eq]=${slug}&populate=*`
-  );
-  const albumData = await res.json();
-  const album = albumData.data[0];
-
-  const description = await markdownToHtml(album.attributes.Description);
+export async function getStaticProps({params}) {
+  const { items } = await client.getEntries({ content_type: 'album', 'fields.slug': params.slug})
+  const stringifiedData = safeJsonStringify(items);
+  const data = JSON.parse(stringifiedData);
 
   return {
-    props: { album, description },
-  };
+    props: {album: data[0]}
+  }
 }

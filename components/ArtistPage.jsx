@@ -15,47 +15,31 @@ const ArtistPage = ({artist}) => {
     const bandCamp = <FontAwesomeIcon className={styles.icons} icon={faBandcamp} />;
     const insta = <FontAwesomeIcon className={styles.icons} icon={faInstagram} />;
     const arrowReturn = <FontAwesomeIcon className="iconArrow" icon={faArrowTurnDown} />;
-    const artistAlbums = artist.attributes.albums;
+    const artistAlbums = artist.fields.albums;
 
-    const name = artist.attributes.Name 
+    const name = artist.fields.name;
+    const imageUrl = artist.fields.image.fields.file.url 
     const nameUpper = name.toUpperCase();
-    const socials = artist.attributes.socials;
+    // const socials = artist.attributes.socials;
+    console.log(artist)
 
   return (
     <div className={styles.artistPageContainer}>
-        <div className={styles.button}>
+        {/* <div className={styles.button}>
             <BackButton text="ALL ARTISTS"/>
-        </div>
-        
-        {/* <div className={`${styles.title} ${styles.card}`}>
-            <div>
-                <h1>{nameUpper}</h1>
-            </div>
-            
-        </div> */}
-        
+        </div>         */}
         
         <div className={styles.artistImageCard}>
-            <Image height={500} width={600} className={styles.image} src={artist.attributes.Image.data[0].attributes.url} alt={nameUpper} />
-            <h5 className={styles.mainTitle}>{nameUpper}</h5>    
+            <img className={styles.image} src={"https:" + imageUrl} alt={nameUpper} />
+            <h3 className={styles.mainTitle}>{nameUpper}</h3>    
         </div> 
       
         <div className={styles.artistContents}>
             <div  className={styles.bio}>
                 <h3 className={styles.cardTitle}>BIO</h3>
-                <p>{artist.attributes.Description}</p>
+                <p>{artist.fields.description}</p>
                 <h3 className={styles.cardTitle}>FOLLOW</h3>
-                <div className={styles.socials}>
-                    {/* <span> 
-                        <a href="">{soundCloud}</a>
-                    </span>
-                    <span>
-                        <a href="">{bandCamp}</a>
-                    </span>
-                    <span>
-                        <a href="">{insta}</a>
-                    </span> */}
-
+                {/* <div className={styles.socials}>
                     {
                         socials.data.map((social, i) => {
                             const title = social.attributes.Name;
@@ -64,22 +48,20 @@ const ArtistPage = ({artist}) => {
                             return (
                                 <span key={i}>
                                     <a target="blank" href={social.attributes.Url}>{title}</a>
-                                    {/* <img src={image} alt="" /> */}
                                 </span>
                                 
                                 
                             )
                         })
                     }
-
-                </div>
+                </div> */}
             </div>
             <div className={styles.releases}>
                 <h3 className={styles.cardTitle}>LATEST RELEASES</h3>
                 <Carousel>
-                    {artistAlbums.data.map((album, i)=> {
+                    {artistAlbums.map((album, i)=> {
                         const id = album.id;
-                        const albumKey = album.attributes.Title;
+                        const albumKey = album.fields.title;
                         return (
                             <LatestReleases key={albumKey} album={album} arrowReturn={arrowReturn} />
                         )

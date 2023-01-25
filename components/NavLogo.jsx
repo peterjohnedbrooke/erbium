@@ -4,12 +4,12 @@ import styles from "../styles/Home.module.scss"
 import Image from "next/image";
 
 export default function NavLogo({navLogo}) {
-  const logo = navLogo.data.attributes.NavLogo.data.attributes.url
+  const logo = navLogo[0].fields.logo.fields.file.url;
   return (
     <div className={styles.logoContainer}>
       <Link href="/">
-          <a className={styles.navLogoText}>
-            <Image alt="" height="45px" width="45px" className={styles.navLogo} src={logo} />
+          <a className={styles.navLogoContainer}>
+            <img alt="" className={styles.navLogo} src={"https:" + logo} />
           </a>
       </Link>
     </div>

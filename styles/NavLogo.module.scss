@@ -5,7 +5,7 @@
     justify-content: space-evenly;
     z-index: 1;
 
-    .navLogoText {
+    .navLogoContainer {
         color: var(--color-text-primary);
         list-style-type: none;
         text-decoration: none;
@@ -16,8 +16,8 @@
         // margin: 1em;
 
         .navLogo {
-            height: 30px;
-            width: 50px;
+            height: 60px;
+            width: 70px;
             padding-left: 1em;
         }
     }

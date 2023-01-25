@@ -13,75 +13,44 @@ import PageLabel from "../components/PageLabel";
 import { useRouter } from "next/router";
 import { Carousel } from "react-bootstrap";
 import ReactPlayer from "react-player";
+import { createClient } from "contentful";
 
 const URL = process.env.STRAPIBASEURL;
 
-export async function getStaticProps() {
-  // get posts from out api (strapi)
+export async function getStaticProps({landingVid}) {
 
-  const res = await fetch(
-    "https://erbiumbackend.herokuapp.com/api/artists?populate=*"
-  );
-  const artists = await res.json();
+  const client = createClient({
+    space: process.env.CONTENTFUL_SPACE_ID  ,
+    accessToken: process.env.CONTENTFUL_ACCESS_ID
+  });
 
-  const resVideo = await fetch(
-    "https://erbiumbackend.herokuapp.com/api/landing-video?populate=*"
-  );
-  const video = await resVideo.json();
-
-  const resCarousel = await fetch(
-    "https://erbiumbackend.herokuapp.com/api/landing-carousels?populate=*"
-  );
-
-  const carousel = await resCarousel.json();
+  const res = await client.getEntries({ content_type: 'landingVideo'})
 
   return {
-    props: { artists, video, carousel },
-  };
+    props: {
+      landingVid: res.items
+    }
+  }
 }
 
-export default function Home({ artists, video, carousel }) {
-  const title = "Erbium Records";
-  console.log(carousel);
-  if (artists) {
+export default function Home({ landingVid }) {
+  const landingVideo = landingVid[0].fields.video.fields.file.url
+
     return (
       <div>
         <Head>
-          <title>{title}</title>
+          <title>Erbium Records</title>
         </Head>
         <ContentWrapper>
           <div className={styles.landingContainer}>
-            <video autoPlay loop muted playsInline>
+            <video width="1100" height="440" autoPlay loop muted playsInline>
               <source
-                src={video.data.attributes.Video.data[0].attributes.url}
+                src={"https:" + landingVideo}
               />
             </video>
-
-            {/* <Carousel controls={false} indicators={false} interval={4000}>
-              {carousel.data.map((video, i) => {
-                return (
-                  <Carousel.Item key={i}>
-                    <video controls autoPlay loop muted playsInline>
-                      <source
-                        src={video.attributes.Media.data[0].attributes.url}
-                      />
-                    </video>
-                    <video
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
-                      src={video.attributes.Media.data[0].attributes.url}
-                    />
-                  </Carousel.Item>
-                );
-              })}
-            </Carousel> */}
           </div>
         </ContentWrapper>
         <Footer />
       </div>
     );
   }
-  return null;
-}

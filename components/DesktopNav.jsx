@@ -18,7 +18,7 @@ const ThemeToggle = dynamic(() => import("../components/ThemeToggle"), {
 });
 
 
-export default function DesktopNav({navImages, navLogo}) {
+export default function DesktopNav({navLogo}) {
 
   const [click, setClick] = useState(false);
   const[clickLogo, setClickLogo] = useState(false);
@@ -124,12 +124,6 @@ export default function DesktopNav({navImages, navLogo}) {
     }
   }
   
-  const navImage = navImages.data.attributes.NavImage.data;
-  
-  const imageOne = `${navImage[0].attributes.url}`;
-  const imageTwo = `${navImage[1].attributes.url}`;
-  const imageThree = `${navImage[2].attributes.url}`;
-  const imageFour = `${navImage[3].attributes.url}`;
 
   const bandCamp = <FontAwesomeIcon className="bandCamp" icon={faBandcamp} />;
   const soundCloud = <FontAwesomeIcon className="soundCloud" icon={faSoundcloud} />;
@@ -187,31 +181,25 @@ export default function DesktopNav({navImages, navLogo}) {
             <Hamburger size={25} className={styles.burgerInner} toggled={isOpen} rounded toggle ={setOpen} />
           </div>
         </div>
-        <div className={click ? styles.hoverMenuShow : styles.hoverMenuHidden} style={ hoverOne ?{backgroundImage: `url(${imageOne})` }
-          : hoverTwo ? {backgroundImage: `url(${imageTwo})` }
-          : hoverThree ? {backgroundImage: `url(${imageThree})` }
-          : hoverFour ? {backgroundImage: `url(${imageFour})`} 
-          : click ? {backgroundImage: `url(${imageOne})` } : {backgroundImage: `url(${imageOne})` } }>
-        </div>
         <div className={click ? `${styles.sideNavRightActive}` : `${styles.sideNavRightHidden}`}>
           <ul className={click ? `${styles.rightSideList}` : `${styles.rightSideListHidden}`}>
             <li>
-              <Link href="/"><a onMouseEnter={handleHoverOne} onClick={handleExitHome}>HOME.</a></Link>
+              <Link href="/"><a onClick={handleExitHome}>HOME.</a></Link>
             </li>
             <li>
-                <Link href="/artists"><a onMouseEnter={handleHoverTwo} onClick={handleExit}>ARTISTS.</a></Link>
+                <Link href="/artists"><a onClick={handleExit}>ARTISTS.</a></Link>
             </li>
             <li>
-              <Link href="/artists/albums" ><a onMouseEnter={handleHoverThree} onClick={handleExit}>RELEASES.</a></Link>
+              <Link href="/artists/albums" ><a onClick={handleExit}>RELEASES.</a></Link>
             </li>
             <li>
-              <Link href="/news" ><a onMouseEnter={handleHoverFour} onClick={handleExit}>NEWS.</a></Link>
+              <Link href="/news" ><a onClick={handleExit}>NEWS.</a></Link>
             </li>
             <li>
-              <Link href="/events" ><a onMouseEnter={handleHoverOne} onClick={handleExit}>EVENTS.</a></Link>
+              <Link href="/events" ><a onClick={handleExit}>EVENTS.</a></Link>
             </li>
             <li>
-              <Link href="/about" ><a onMouseEnter={handleHoverTwo} onClick={handleExit}>ABOUT.</a></Link>
+              <Link href="/about" ><a onClick={handleExit}>ABOUT.</a></Link>
             </li>
           </ul>
         </div>

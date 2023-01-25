@@ -9,7 +9,7 @@ export default function Footer() {
         <h3 className={styles.title}>&copy;ERBIUM RECORDS 2022</h3>
       </div>
       <div className={styles.bottomNav}>
-        <h3 className={styles.title}>INFO</h3>
+        <h2 className={styles.title}>INFO</h2>
         <ul>
           <li>
             <a href="">Contact</a>
@@ -42,11 +42,6 @@ export default function Footer() {
           </li>
         </ul>
       </div>
-      {/* <div className={styles.copyrightText}>
-        <ul>
-          <li>&copy;Design by Iconiks</li>
-        </ul>
-      </div> */}
       <div className={styles.subscribe}>
         <h3 className={styles.title}>NEWSLETTER</h3>
         <div>

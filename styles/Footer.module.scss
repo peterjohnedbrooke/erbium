@@ -3,13 +3,13 @@
 .wrapper {
     left: 0;
     right: 0;
-    padding: 1em;
-    height: 25vh;
+    padding: 5rem;
+    height: 300px;
     background-color: black;
     position: absolute;
     display: flex;
     z-index: 2;
-    padding: 1em;
+    padding: 2rem;
     overflow: hidden;
 
 
@@ -26,14 +26,16 @@
         font-family: var(--text-family-primary);
         transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
         text-decoration: none;
-        font-weight: 600;
+        font-weight: 700 !important;
         letter-spacing: 0.3rem;
-        font-size: 1.2vh;
+        // font-size: 1.2vh;
+        // padding: 1rem;
     }
 
     .bottomNav,
+    .tagline,
     .subscribe {
-
+        padding: 1rem;
         font-family: var(--text-family-body);
 
         ul {

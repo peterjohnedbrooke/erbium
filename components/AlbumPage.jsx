@@ -6,26 +6,26 @@ import Link from 'next/link'
 import BackButton from './BackButton';
 import Image from 'next/image';
 
-const AlbumPage = ({album, description}) => {
+const AlbumPage = ({album}) => {
   const arrowReturn = <FontAwesomeIcon className="iconArrow" icon={faArrowTurnDown} />;
+  const artwork = album.fields.image.fields.file.url;
+  console.log(artwork)
   return (
     <div className={styles.albumPageWrapper}>
-      <div className={styles.button}>
+      {/* <div className={styles.button}>
         <BackButton text="RETURN"/>
-      </div>
+      </div> */}
       <div className={styles.albumPageContainer}>
         <div className={styles.imgContainer}>
-          <Image height={800} width={800}
-            src={album.attributes.Image.data[0].attributes.url}
-            alt={album.attributes.Title}
-          />
+          <img src={"https:" + artwork}/>
         </div>
         <div className={styles.albumInfo}>
-          <h1 className={styles.title}>{album.attributes.Title}</h1>
-          <div className={styles.info} dangerouslySetInnerHTML={{__html: description}}>
+          <h1 className={styles.title}>{album.fields.title}</h1>
+          <div className={styles.info}>
+            <p>{album.fields.description}</p>
           </div>
           <div className={styles.buyBtn}>
-            <a target="blank" href={album.attributes.Url}>BUY</a>
+            <a target="blank" href={album.fields.link}>BUY</a>
           </div>
         </div>
       </div>

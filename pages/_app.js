@@ -1,17 +1,14 @@
 import DesktopNav from "../components/DesktopNav";
 import "../styles/globals.scss";
 import App from "next/app";
-import "bootstrap/dist/css/bootstrap.css";
 import { useEffect } from "react";
 import Transition from "../components/Transition";
+import { createClient } from "contentful";
 
-function MyApp({ Component, pageProps, navImages, navLogo }) {
-  useEffect(() => {
-    import("bootstrap/dist/js/bootstrap");
-  }, []);
+function MyApp({ Component, pageProps, logo}) {
   return (
     <>
-      <DesktopNav navImages={navImages} navLogo={navLogo} />
+      <DesktopNav navLogo={logo} />
       <Transition>
         <Component {...pageProps} />
       </Transition>
@@ -20,21 +17,20 @@ function MyApp({ Component, pageProps, navImages, navLogo }) {
 }
 
 MyApp.getInitialProps = async (appContext) => {
-  // calls page's `getInitialProps` and fills `appProps.pageProps`
   const appProps = await App.getInitialProps(appContext);
 
-  const resNavImage = await fetch(
-    "https://erbiumbackend.herokuapp.com/api/nav-image?populate[NavImage][fields][0]=url"
-  );
+  const client = createClient({
+    space: process.env.CONTENTFUL_SPACE_ID  ,
+    accessToken: process.env.CONTENTFUL_ACCESS_ID
+  });
 
-  const navImages = await resNavImage.json();
+  const res = await client.getEntries({ content_type: 'navLogo'})
 
-  const resNavLogo = await fetch(
-    "https://erbiumbackend.herokuapp.com/api/navlogo?populate[NavLogo][fields][0]=url"
-  );
-  const navLogo = await resNavLogo.json();
+  return {
+    logo: res.items,
+    ...appProps
+  }
 
-  return { ...appProps, navImages, navLogo };
-};
+}
 
 export default MyApp;

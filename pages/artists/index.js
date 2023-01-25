@@ -9,16 +9,27 @@ import { motion } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import { Row } from "react-bootstrap";
 import { useRouter } from "next/router";
+import { createClient } from "contentful";
+import safeJsonStringify from 'safe-json-stringify';
 
-export async function getStaticProps() {
-  const res = await fetch(
-    "https://erbiumbackend.herokuapp.com/api/artists?populate=*"
-  );
-  const artists = await res.json();
+
+export async function getStaticProps({}) {
+
+  const client = createClient({
+    space: process.env.CONTENTFUL_SPACE_ID  ,
+    accessToken: process.env.CONTENTFUL_ACCESS_ID
+  });
+
+  const res = await client.getEntries({ content_type: 'artist'})
+  const stringifiedData = safeJsonStringify(res.items);
+  const artists = JSON.parse(stringifiedData);
 
   return {
-    props: { artists },
-  };
+    props: {
+      artists
+    }
+  }
+
 }
 
 export default function Artists({ artists }) {
@@ -36,32 +47,25 @@ export default function Artists({ artists }) {
           <title>Artists</title>
         </Head>
         <ContentWrapper>
-          <div className={styles.container}>
-            <Row
-              xs={1}
-              md={2}
-              lg={3}
-              className={`g-4 ${styles.artistCardBody}`}
-            >
-              {artists.data.map((artist, i) => {
-                const { Name, Description } = artist.attributes;
-                const id = artist.id;
-                const { Image } =
-                  artist.attributes.Image.data[0].attributes.url;
+          <div className={styles.artistsGrid}>
+              {artists.map((artist, i) => {
+                console.log(artist)
+                const { name, description } = artist.fields;
+                const id = artist.sys.id;
+                const { image } =
+                  artist.fields.image.fields.file.url;
                 return (
                   <ArtistCard
                     artist={artist}
-                    Name={Name}
-                    Description={Description}
-                    Slug={`${artist.attributes.Slug}`}
-                    Image={Image}
+                    Name={name}
+                    Slug={`${artist.fields.slug}`}
+                    Image={image}
                     id={id}
                     key={i}
                   />
                 );
               })}
-            </Row>
-          </div>
+            </div>
         </ContentWrapper>
         <Footer />
       </div>

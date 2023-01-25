@@ -111,7 +111,7 @@ body {
   --text-family-primary: Sansumi-Regular !important;
   --text-family-bold: Sansumi-Demi-Bold !important;
   --text-family-secondary: 'Fjalla One', sans-serif;
-  --text-family-body: 'Cormorant Garamond', serif;
+  --text-family-body: 'Montserrat', sans-serif;
   transition: background-color 0.25s ease-in-out;
 }
 
@@ -157,7 +157,7 @@ body {
 .lightBulb,
 .moon {
   color: var(--color-text-primary);
-  font-size: 1vw;
+  font-size: 20px;
   z-index: 2;
 
   :hover {
@@ -166,43 +166,10 @@ body {
   }
 }
 
-// a {
-//   color: var(--color-text-primary);
-//   text-decoration: none;
-// }
-
-// * {
-//   box-sizing: border-box;
-// }
-
 .iconArrow {
   transform: rotate(90deg);
   font-weight: 200;
 }
-
-.lnk {
-  // background-color: aquamarine;
-  color: var(--color-text-primary);
-  transition: color 1s ease-in-out;
-  font-size: 1.5vw;
-  padding: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  // transform: rotate(-25deg);
-  margin-top: 15px;
-}
-
-.lnk:hover {
-  list-style: none;
-  text-decoration: none;
-  color: var(--color-text-hover);
-  transition: color 1s ease-in-out;
-
-}
-
-
-
 
 h1,
 h2,
@@ -210,30 +177,17 @@ h3,
 h4,
 h5 {
   color: var(--color-text-primary);
+  font-weight: 700 !important;
+  letter-spacing: 0.3rem;
+}
+a {
+  font-weight: 600 !important;
+  letter-spacing: 0.3rem;
 }
 
 p {
   color: var(--color-text-primary);
-}
-
-button {
-  color: black !important;
-}
-
-
-.navLogo {
-  height: 10vh;
-  width: 15vw;
-  max-width: 150px;
-  background-position: center;
-  background-size: contain;
-  transition: all 0.8s ease-in-out;
-  z-index: 999;
-  position: sticky;
-}
-
-ul {
-  padding: 0 !important;
+  font-family: var(--text-family-body);
 }
 
 .cardBack {
@@ -295,3 +249,90 @@ ul {
     font-size: 5.5vw;
   }
 }
+
+h1, h2, h3, h4, h5, p {
+  padding: 0;
+  margin: 0 !important;
+  font-weight: 400 !important;
+}
+
+h5 {
+  font-size: 20px !important;
+}
+
+h1 {
+  font-size: 56px !important;
+}
+
+p {
+  font-size: 14px !important;
+}
+
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 35px !important;
+  }
+
+  h2 {
+    font-size: 30px !important;
+  }
+
+  h3 {
+    font-size: 25px !important;
+  }
+
+  h4 {
+    font-size: 20px !important;
+  }
+
+  h5 {
+    font-size: 20px !important;
+  }
+} 
+@media screen and (max-width: 940px) and (orientation: landscape) {
+  h1 {
+    font-size: 35px !important;
+  }
+
+  h2 {
+    font-size: 30px !important;
+  }
+
+  h3 {
+    font-size: 25px !important;
+    line-height: 35px !important;
+  }
+
+  h4 {
+    font-size: 20px !important;
+  }
+
+  h5 {
+    font-size: 20px !important;
+  }
+} 
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 35px !important;
+  }
+
+  h2 {
+    font-size: 20px!important;
+  }
+
+  h3 {
+    font-size: 25px !important;
+  }
+
+  h4 {
+    font-size: 25px !important;
+  }
+
+  h5 {
+    font-size: 25px !important;
+  }
+
+  p {
+    font-size: 20px !important;
+  }
+} 

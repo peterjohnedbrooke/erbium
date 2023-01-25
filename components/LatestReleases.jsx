@@ -4,11 +4,12 @@ import Link from 'next/link';
 import {Card} from "react-bootstrap"
 
 const LatestReleases = ({album, arrowReturn}) => {
-    const artwork = album.attributes.Image.data[0].attributes.url;
-    const { Title} = album.attributes;
-    const titleUpper = Title.toUpperCase();
-    const slug = album.attributes.Slug
-    const artists = album.attributes.artists.data.map((artist, i) =>  {
+    const artwork = album.fields.image.fields.file.url;
+    console.log(artwork)
+    const title = album.fields.title;
+    const titleUpper = title.toUpperCase();
+    const slug = album.fields.slug
+    const artists = album.fields.artists.map((artist, i) =>  {
         return artist
     })
 
@@ -18,21 +19,18 @@ const LatestReleases = ({album, arrowReturn}) => {
   return (
     <div className={styles.releasesItem}>
         <div className={styles.card}>
-          <Link key={id} href={"albums/" + slug} >
-            <Card key={id} className={`rounded-0 border-0 d-flex ${styles.cardBack}`}>
-              <Card.Img src={artwork} className={`rounded-0 card-img ${styles.cardImg}`}/>
-                <Card.ImgOverlay className='rounded-0 text-center d-flex flex-column justify-content-center img-overlay'>
-                  <div>
-                      <h5 className={styles.overlayText}>Explore</h5>
-                  </div>    
-                </Card.ImgOverlay> 
-            </Card>
+          <Link key={id} href={"albums/" + slug}>
+            <div key={id} className={styles.cardBack}>
+              <img src={"https:" + artwork} className={styles.cardImg}/>
+                <div>
+                  <h5 className={styles.overlayText}>Explore</h5>  
+                </div> 
+            </div>
           </Link>
           <div className={styles.cardInfo}>
             <h5>{titleUpper}</h5>
             <div>
-                <p>- </p>
-                {artists.map((artist, i) => {
+                {/* {artists.map((artist, i) => {
                     const artistName = artist.attributes.Name
                     const artistNameUpper = artistName.toUpperCase();
                     return (
@@ -41,7 +39,7 @@ const LatestReleases = ({album, arrowReturn}) => {
                             <br></br>
                         </p>
                     )
-                })}
+                })} */}
             </div>
            </div>
         </div>

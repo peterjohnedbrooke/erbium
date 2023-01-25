@@ -36,6 +36,7 @@ export default function _document() {
           href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap"
           rel="stylesheet"
         ></link>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet"></link>
       </Head>
       <body>
         <script dangerouslySetInnerHTML={{ __html: setInitialTheme }} />

@@ -5,17 +5,51 @@ import ContentWrapper from "../../components/ContentWrapper";
 import Footer from "../../components/Footer";
 import Hero from "../../components/Hero";
 import { useRouter } from "next/router";
+import { createClient } from "contentful";
+import safeJsonStringify from 'safe-json-stringify';
 
-const URL = process.env.STRAPIBASEURL;
+
+const client = createClient({
+  space: process.env.CONTENTFUL_SPACE_ID  ,
+  accessToken: process.env.CONTENTFUL_ACCESS_ID
+});
+
+export async function getStaticPaths() {
+  const res = await client.getEntries({ content_type: 'artist'})
+
+  // const rawData = await getSlugPageProps(params.slug, 'artist');
+  const stringifiedData = safeJsonStringify(res.items);
+  const data = JSON.parse(stringifiedData);
+
+  const paths = data.map((item => {
+    return {
+      params: {slug: item.fields.slug}
+    }
+  }))
+  
+  return {
+    paths, 
+    fallback: false
+  }
+}
+
+export async function getStaticProps({params}) {
+  const { items } = await client.getEntries({ content_type: 'artist', 'fields.slug': params.slug})
+  const stringifiedData = safeJsonStringify(items);
+  const data = JSON.parse(stringifiedData);
+
+  return {
+    props: {artist: data[0]}
+  }
+}
 
 export default function Artist({ artist }) {
   if (!!artist) {
     return (
       <div>
         <Head>
-          <title>{artist.attributes.Name}</title>
+          <title>{artist.fields.name}</title>
         </Head>
-        {/* <DesktopNav navImages={navImages} /> */}
         <ContentWrapper>
           <ArtistPage artist={artist} />
         </ContentWrapper>
@@ -26,40 +60,7 @@ export default function Artist({ artist }) {
   return null;
 }
 
-// tell next.js how many pages there are
 
-export async function getStaticPaths() {
-  const res = await fetch("https://erbiumbackend.herokuapp.com/api/artists");
 
-  const artists = await res.json();
 
-  const paths = artists.data.map((artist) => ({
-    params: { slug: artist.attributes.Slug },
-  }));
 
-  return {
-    paths,
-    fallback: true,
-  };
-}
-
-//for each individual page: get the data for that page
-
-export async function getStaticProps({ params }) {
-  const { slug } = params;
-
-  const res = await fetch(
-    `https://erbiumbackend.herokuapp.com/api/artists?filters[Slug][$eq]=${slug}&populate[Image][fields][1]=url&populate[albums][populate]=*&populate[socials][populate]=*`
-  );
-
-  if (!res) {
-    return { notFound: true };
-  }
-
-  const artistData = await res.json();
-  const artist = artistData.data[0];
-
-  return {
-    props: { artist },
-  };
-}

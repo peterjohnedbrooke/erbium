@@ -21,8 +21,9 @@
     text-decoration: none;
     font-weight: 600;
     letter-spacing: 0.3rem;
-    font-size: 1.1vh;
     padding: 0.5em;
+    font-size: 1.4vh;
+
   }
 
   a:hover {
@@ -54,24 +55,26 @@
 
 .navBarContainerStatic,
 .navBarContainerScroll {
-  height: 80px;
+  height: 100px;
   width: 100vw;
   top: 0;
   left: 0;
-  padding: 1em;
+  padding: 3rem;
   display: flex;
   align-items: center;
   z-index: 2;
-  transition: all 0.3s ease-in-out;
+  // transition: all 0.3s ease-in-out;
   position: fixed;
   flex-direction: row;
   justify-content: space-between;
   font-family: var(--text-family-primary);
+  background-color: var(--color-bg-primary);
+
 }
 
-.navBarContainerStatic {
-  background-color: transparent;
-}
+// .navBarContainerStatic {
+//   background-color: transparent;
+// }
 
 .navBarContainerScroll {
   background-color: var(--color-bg-primary);

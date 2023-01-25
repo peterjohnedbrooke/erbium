@@ -8,28 +8,20 @@
 
     .cardTitle,
     .mainTitle {
-        margin: 1em;
         font-family: var(--text-family-primary);
         color: var(--color-text-secondary);
-        font-weight: bolder;
         letter-spacing: 0.3rem;
         background-color: var(--color-bg-toggle);
-        padding: 0.3em;
+        padding: 0.5em;
         align-self: center;
-        font-weight: 600;
-        transform: rotate(-2deg);
         overflow: hidden;
+        font-weight: 700 !important;
     }
 
     .cardTitle {
-        font-size: 2vh;
+        // font-size: 2vh;
         align-self: flex-start;
     }
-
-    .mainTitle {
-        font-size: 4vh;
-    }
-
 
     .socials,
     .bio,
@@ -58,9 +50,9 @@
         flex-direction: column;
 
 
-        .image {
-            min-height: 35vh;
-            min-width: 25vw;
+        img {
+            height: 400px;
+            width: 400px;
             // max-width: 25vw;
         }
 
@@ -74,7 +66,7 @@
             span {
                 a {
                     color: black;
-                    font-size: 3vh;
+                    // font-size: 3vh;
                 }
             }
         }
@@ -91,18 +83,14 @@
         grid-area: a;
 
         p {
-            font-size: 1.7vh;
-            font-family: var(--text-family-body);
-            font-weight: 600;
-            letter-spacing: 0.01rem;
-            padding: 1em;
+            padding: 2rem;
         }
 
         .socials {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            padding: 1em;
+            padding: 2rem;
 
 
             span {
@@ -122,8 +110,8 @@
         grid-area: b;
 
         .item {
-            padding: 3em;
-            min-width: 25rem;
+            padding: 3rem;
+            // min-width: 25rem;
         }
 
     }
