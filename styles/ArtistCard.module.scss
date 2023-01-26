@@ -9,8 +9,8 @@
     overflow: hidden;
     background: none;
     flex-direction: column;
-    height: 350px;
-    max-height: 350px;
+    // height: 350px;
+    // max-height: 350px;
   }
 
   .cardBack img {
@@ -23,12 +23,13 @@
     overflow: hidden;
   }
 
-  .cardBack:hover img {
+  .cardBack img:hover {
     opacity: 1;
     transform: scale(1.2);
     overflow: hidden;
     height: 350px;
     max-height: 350px;
+    cursor: pointer;
   }
 
   .imageOverlay {

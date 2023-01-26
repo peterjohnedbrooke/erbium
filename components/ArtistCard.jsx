@@ -19,12 +19,12 @@ export default function ArtistCard({Name,Image,Slug,id, artist})
         <div className={styles.card}>
         <Link href={"artists/" + Slug} key={id}>
           <div className={styles.cardBack}>
-              <img src={"https:" + imageUrl} className={`rounded-0 card-img ${styles.image}`}/>
-              <div className={`img-overlay ${styles.imageOverlay}`}>
+              <img src={"https:" + imageUrl} className={styles.image}/>
+              {/* <div className={styles.imageOverlay}>
                 <div className={styles.desktopCardInfo}>
                     <button><h2>{artist.fields.name}</h2></button>
                 </div>    
-              </div>
+              </div> */}
               <div className={styles.mobileCardInfo}>
                 {/* <h5 className={styles.overlayText}>{artist.fields.name}</h5> */}
                 <button><h2>{artist.fields.name}</h2></button>
