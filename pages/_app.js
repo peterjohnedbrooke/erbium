@@ -9,9 +9,7 @@ function MyApp({ Component, pageProps, logo}) {
   return (
     <>
       <DesktopNav navLogo={logo} />
-      <Transition>
-        <Component {...pageProps} />
-      </Transition>
+      <Component {...pageProps} />
     </>
   );
 }
