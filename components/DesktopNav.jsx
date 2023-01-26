@@ -173,7 +173,7 @@ export default function DesktopNav({navLogo}) {
         </div>
        
         <div className={styles.navBarContainerRight}>
-          <NavLogo navLogo={navLogo} />
+          <NavLogo navLogo={navLogo} handleExit={handleExit} />
           <div className={click ? `${styles.burgerIconPage}` : `${styles.burgerIcon}`} onClick={handleClick}>
             <Hamburger size={25} className={styles.burgerInner} toggled={isOpen} rounded toggle ={setOpen} />
           </div>
