@@ -110,8 +110,8 @@
       display: none;
     }
 
-    .cardBack:hover img {
-
+    .cardBack img {
+      height: auto;
       opacity: 1;
       transform: scale(1);
       filter: grayscale(15%);

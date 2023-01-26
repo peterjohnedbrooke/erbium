@@ -20,6 +20,7 @@
         margin: auto auto;
         max-width: 1200px;
         gap: 2rem;
+        align-items: center;
     }
 
     .title {
@@ -29,6 +30,7 @@
         text-decoration: none;
         font-weight: 700 !important;
         letter-spacing: 0.3rem;
+        text-align: center;
         // font-size: 1.2vh;
         // padding: 1rem;
     }
@@ -45,6 +47,7 @@
         padding: 1rem;
         font-family: var(--text-family-body);
         width: 50vw;
+        gap: 2rem;
 
 
         ul {
@@ -70,5 +73,17 @@
         align-items: center;
         justify-content: space-between;
     }
+
+}
+
+@media screen and (max-width: 600px) { 
+    .wrapper {
+        .tagline, 
+        .bottomNav {
+            width: 90%;
+            flex-direction: column;
+        }
+    }
+ 
 
 }
