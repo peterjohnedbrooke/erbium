@@ -4,12 +4,14 @@
     left: 0;
     right: 0;
     padding: 5rem;
-    background-color: black;
+    background-color: #474747;
     position: absolute;
     display: flex;
     z-index: 2;
     padding: 2rem;
     overflow: hidden;
+    border-top: 2px solid var(--color-bg-toggle);
+
 
 
     .footerContainer {

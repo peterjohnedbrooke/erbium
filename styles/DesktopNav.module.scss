@@ -5,6 +5,11 @@
   justify-content: space-evenly;
   z-index: 2;
   position: relative;
+  width: 1200px;
+  border: 2px solid white;
+  margin: auto auto;
+  padding: 10px;
+  background-color: black;
 
   li {
     // padding-right: 2em;
@@ -35,6 +40,8 @@
 .navWrapper {
   width: 100%;
   // padding: 2rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .sideNavBackground {
@@ -59,7 +66,7 @@
 
 .navBarContainerStatic,
 .navBarContainerScroll {
-  height: 120px;
+  height: 150px;
   width: 100vw;
   top: 0;
   left: 0;
@@ -86,8 +93,9 @@
 
 .navBarContainerRight {
   display: none;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
   align-items: center;
 }
 
@@ -98,7 +106,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0.8;
+  // opacity: 0.8;
 }
 
 .burgerIcon,
@@ -302,6 +310,9 @@
 @media (max-width: 960px) {
 
   .desktopNavBar {
+    display: none;
+  }
+  .navWrapper {
     display: none;
   }
 

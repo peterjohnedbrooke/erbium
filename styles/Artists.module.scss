@@ -3,14 +3,15 @@
     grid-template-columns: 1fr 1fr 1fr;
     gap: 2rem;
     max-width: 1600px;
-    // margin: 5em;
+    padding: 3rem;
 
 }
 
 
 
 @media (max-width: 600px) {
-    .grid {
+    .artistsGrid {
+        grid-template-columns: 1fr;
         width: 100%;
         flex-direction: column;
     }
