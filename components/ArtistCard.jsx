@@ -15,7 +15,7 @@ export default function ArtistCard({Name,Image,Slug,id, artist})
   const imageUrl = artist.fields.image.fields.file.url
 
   return (
-    <Animation>
+    <>
         <div className={styles.card}>
         <Link href={"artists/" + Slug} key={id}>
           <div className={styles.cardBack}>
@@ -32,6 +32,6 @@ export default function ArtistCard({Name,Image,Slug,id, artist})
           </div>
         </Link>
       </div>
-    </Animation>
+    </>
   );
 }
