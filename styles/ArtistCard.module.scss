@@ -8,7 +8,7 @@
     display: flex;
     overflow: hidden;
     background: none;
-
+    flex-direction: column;
   }
 
   .cardBack img {
@@ -16,12 +16,16 @@
     position: relative;
     filter: contrast(115%);
     min-height: fit-content;
+    height: 300px;
+    max-height: 300px;
+    // width: 300px;
   }
 
   .cardBack:hover img {
     opacity: 1;
     transform: scale(1.2);
-    filter: grayscale(25%);
+    height: 300px;
+    max-height: 300px;
   }
 
   .imageOverlay {
@@ -40,7 +44,7 @@
       justify-content: center;
 
       button {
-        background-color: var(--color-bg-toggle);
+        background-color: var(--color-bg-secondary);
         color: var(--color-text-secondary) !important;
         padding: 0.3em;
         font-family: var(--text-family-primary);

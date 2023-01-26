@@ -58,17 +58,17 @@ html {
   visibility: visible;
 }
 
-body,
-body[data-theme="light"] {
-  --color-text-primary: #0c0f17;
-  --color-text-secondary: #e3e3e3;
-  --color-bg-primary: #fff;
-  --color-bg-toggle: black;
-  --color-text-hover: #fa0d5e;
-  --color-box-primary: rgba(3, 8, 20, 0.1);
-}
+// body,
+// body[data-theme="light"] {
+//   --color-text-primary: #0c0f17;
+//   --color-text-secondary: #e3e3e3;
+//   --color-bg-primary: #fff;
+//   --color-bg-toggle: black;
+//   --color-text-hover: #fa0d5e;
+//   --color-box-primary: rgba(3, 8, 20, 0.1);
+// }
 
-body[data-theme="dark"] {
+body {
   --color-text-primary: #e3e3e3;
   --color-text-secondary: #0c0f17;
   --color-bg-primary: black;
