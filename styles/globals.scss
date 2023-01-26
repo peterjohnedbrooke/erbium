@@ -179,6 +179,7 @@ h5 {
   color: var(--color-text-primary);
   font-weight: 700 !important;
   letter-spacing: 0.3rem;
+  font-family: var(--text-family-primary);
 }
 a {
   font-weight: 600 !important;
@@ -190,44 +191,6 @@ p {
   font-family: var(--text-family-body);
 }
 
-.cardBack {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 1s ease-in-out;
-  margin: 1rem;
-}
-
-.cardBack:hover {
-  transition: all 1s ease-in-out !important;
-}
-
-.card-img-overlay {
-  opacity: 0 !important;
-  color: white !important;
-  font-weight: 900;
-  letter-spacing: 0.5em;
-  background-color: black;
-
-  h5 {
-    color: white !important;
-  }
-
-  a {
-    color: white !important;
-    text-decoration: none;
-  }
-
-  a:hover {
-    color: white !important;
-  }
-}
-
-.card-img-overlay:hover {
-  opacity: 1 !important;
-  color: white !important;
-  cursor: pointer;
-}
 
 
 @media (prefers-color-scheme: dark) {
@@ -248,12 +211,6 @@ p {
     color: var(--color-text-primary);
     font-size: 5.5vw;
   }
-}
-
-h1, h2, h3, h4, h5, p {
-  padding: 0;
-  margin: 0 !important;
-  font-weight: 400 !important;
 }
 
 h5 {

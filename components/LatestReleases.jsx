@@ -18,31 +18,14 @@ const LatestReleases = ({album, arrowReturn}) => {
 
   return (
     <div className={styles.releasesItem}>
-        <div className={styles.card}>
-          <Link key={id} href={"albums/" + slug}>
-            <div key={id} className={styles.cardBack}>
-              <img src={"https:" + artwork} className={styles.cardImg}/>
-                <div>
-                  <h5 className={styles.overlayText}>Explore</h5>  
-                </div> 
-            </div>
-          </Link>
-          <div className={styles.cardInfo}>
-            <h5>{titleUpper}</h5>
-            <div>
-                {/* {artists.map((artist, i) => {
-                    const artistName = artist.attributes.Name
-                    const artistNameUpper = artistName.toUpperCase();
-                    return (
-                        <p key={i}>
-                            {" " + artistNameUpper}
-                            <br></br>
-                        </p>
-                    )
-                })} */}
-            </div>
-           </div>
+      <Link key={id} href={"albums/" + slug}>
+        <div key={id} className={styles.cardBackReleases}>
+          <img src={"https:" + artwork} className={styles.cardImg}/>
         </div>
+      </Link>
+      <div className={styles.cardInfo}>
+        <h5>{titleUpper}</h5>
+      </div>
     </div>
   )
 }

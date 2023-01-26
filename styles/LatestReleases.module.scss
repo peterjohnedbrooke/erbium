@@ -1,20 +1,16 @@
 .releasesItem {
-    padding: 2em;
     max-width: 20rem;
+    display: flex;
+    flex-direction: column;
 
-
-    .card {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        font-size: 3rem;
-        color: #fff;
-        width: 100%;
-        transition: all 500ms;
+    .cardBackReleases img {
+        transition: transform .5s ease;
+        position: relative;
+        filter: contrast(115%);
+        min-height: fit-content;
+        max-height: 350px;
         overflow: hidden;
-    }
-
+      }
 
     .cardInfo {
         display: flex;

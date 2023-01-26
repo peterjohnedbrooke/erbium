@@ -29,47 +29,30 @@ const ArtistPage = ({artist}) => {
             <BackButton text="ALL ARTISTS"/>
         </div>         */}
         
-        <div className={styles.artistImageCard}>
-            <img className={styles.image} src={"https:" + imageUrl} alt={nameUpper} />
-            <h3 className={styles.mainTitle}>{nameUpper}</h3>    
-        </div> 
-      
-        <div className={styles.artistContents}>
-            <div  className={styles.bio}>
-                <h3 className={styles.cardTitle}>BIO</h3>
-                <p>{artist.fields.description}</p>
-                <h3 className={styles.cardTitle}>FOLLOW</h3>
-                {/* <div className={styles.socials}>
-                    {
-                        socials.data.map((social, i) => {
-                            const title = social.attributes.Name;
-                            // const image = social.attributes.Image.data.attributes.url;
-                           
+        <div className={styles.row}>
+            <div className={styles.imageCard}>
+                <img className={styles.image} src={"https:" + imageUrl} alt={nameUpper} />
+            </div>
+            <div className={styles.infoCard}>
+                <h1 className={styles.mainTitle}>{nameUpper}</h1>
+                <div className={styles.bio}>
+                    <h3 className={styles.cardTitle}>BIO</h3>
+                    <p>{artist.fields.description}</p>
+                </div>
+                <div className={styles.releases}>
+                    <h3 className={styles.cardTitle}>LATEST RELEASES</h3>
+                    <div className={styles.releasesContainer}>
+                        {artistAlbums.map((album, i)=> {
+                            const id = album.id;
+                            const albumKey = album.fields.title;
                             return (
-                                <span key={i}>
-                                    <a target="blank" href={social.attributes.Url}>{title}</a>
-                                </span>
-                                
-                                
+                                <LatestReleases key={albumKey} album={album} arrowReturn={arrowReturn} />
                             )
-                        })
-                    }
-                </div> */}
+                        })}
+                    </div>
+                </div>    
             </div>
-            <div className={styles.releases}>
-                <h3 className={styles.cardTitle}>LATEST RELEASES</h3>
-                <Carousel>
-                    {artistAlbums.map((album, i)=> {
-                        const id = album.id;
-                        const albumKey = album.fields.title;
-                        return (
-                            <LatestReleases key={albumKey} album={album} arrowReturn={arrowReturn} />
-                        )
-                    })}
-                </Carousel>
-            </div>
-        </div>
-            
+        </div> 
     </div>
   
   )
