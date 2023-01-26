@@ -27,8 +27,7 @@ export async function getStaticProps({}) {
   return {
     props: {
       artists
-    }, 
-    revalidate: 60
+    }
   }
 
 }

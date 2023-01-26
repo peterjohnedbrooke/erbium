@@ -28,8 +28,7 @@ export async function getStaticProps({landingVid}) {
   return {
     props: {
       landingVid: res.items
-    }, 
-    revalidate: 60
+    }
   }
 }
 
