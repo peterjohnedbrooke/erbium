@@ -15,7 +15,6 @@ import { Carousel } from "react-bootstrap";
 import ReactPlayer from "react-player";
 import { createClient } from "contentful";
 
-const URL = process.env.STRAPIBASEURL;
 
 export async function getStaticProps({landingVid}) {
 
@@ -29,7 +28,8 @@ export async function getStaticProps({landingVid}) {
   return {
     props: {
       landingVid: res.items
-    }
+    }, 
+    revalidate: 60
   }
 }
 

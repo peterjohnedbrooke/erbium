@@ -7,20 +7,20 @@
     min-width: 500px;
 
     .carousel {
-        // cursor: grab;
+        cursor: pointer;
         overflow: hidden;
         background-color: var(--color-bg-primary);
         display: flex;
         border-bottom: 2px solid var(--color-bg-toggle);
         border-top: 2px solid var(--color-bg-toggle);
-        margin: 20px;
+        padding: 20px;
     }
 
 
     .innerCarousel {
         display: flex;
-        padding: 2em;
-        margin-left: 2em;
+        padding: 2rem;
+        margin-left: 5rem;
     }
 
     .item {

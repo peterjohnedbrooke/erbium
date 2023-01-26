@@ -12,9 +12,7 @@ export default function AlbumCard({ Slug, album, id }) {
           <Link key={id} href={"albums/" + Slug} >
             <div key={id} className={styles.cardBack}>
                 <img src={"https:" + artwork} className={styles.cardImg}/>
-                <div>
-                  <h5 className={styles.overlayText}>{album.fields.title}</h5>    
-                </div>
+                <h5 className={styles.overlayText}>{album.fields.title}</h5>    
             </div>
           </Link>
         </div>

@@ -10,9 +10,10 @@
 
   .overlayText {
     font-family: var(--text-family-primary);
-    font-size: 1.5vh;
-    letter-spacing: 0em;
+    // font-size: 1.5vh;
+    letter-spacing: 0.5rem;
     font-weight: 600;
+    padding: 10px;
   }
 
   // @keyframes float {

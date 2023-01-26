@@ -9,6 +9,8 @@
     overflow: hidden;
     background: none;
     flex-direction: column;
+    height: 350px;
+    max-height: 350px;
   }
 
   .cardBack img {
@@ -16,16 +18,17 @@
     position: relative;
     filter: contrast(115%);
     min-height: fit-content;
-    height: 300px;
-    max-height: 300px;
-    // width: 300px;
+    height: 350px;
+    max-height: 350px;
+    overflow: hidden;
   }
 
   .cardBack:hover img {
     opacity: 1;
     transform: scale(1.2);
-    height: 300px;
-    max-height: 300px;
+    overflow: hidden;
+    height: 350px;
+    max-height: 350px;
   }
 
   .imageOverlay {
