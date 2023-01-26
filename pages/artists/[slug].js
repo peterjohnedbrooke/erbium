@@ -9,6 +9,23 @@ import { createClient } from "contentful";
 import safeJsonStringify from 'safe-json-stringify';
 
 
+export default function Artist({ artist }) {
+  if (!!artist) {
+    return (
+      <div>
+        <Head>
+          <title>{artist.fields.name}</title>
+        </Head>
+        <ContentWrapper>
+          <ArtistPage artist={artist} />
+        </ContentWrapper>
+        <Footer />
+      </div>
+    );
+  }
+  return null;
+}
+
 const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID  ,
   accessToken: process.env.CONTENTFUL_ACCESS_ID
@@ -43,22 +60,7 @@ export async function getStaticProps({params}) {
   }
 }
 
-export default function Artist({ artist }) {
-  if (!!artist) {
-    return (
-      <div>
-        <Head>
-          <title>{artist.fields.name}</title>
-        </Head>
-        <ContentWrapper>
-          <ArtistPage artist={artist} />
-        </ContentWrapper>
-        <Footer />
-      </div>
-    );
-  }
-  return null;
-}
+
 
 
 
