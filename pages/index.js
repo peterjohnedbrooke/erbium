@@ -47,7 +47,7 @@ export default function Home({ landingVid, albums }) {
   console.log(albums[0])
 
     return (
-      <div>
+      <>
         <Head>
           <title>Erbium Records</title>
         </Head>
@@ -58,6 +58,7 @@ export default function Home({ landingVid, albums }) {
                   src={"https:" + landingVideo}
                 />
               </video>
+              <h1>Latest Releases</h1>
               <div className={styles.latestReleasesContainer}>
               {albums.slice(0, 3).map((album, i)=> {
                   const id = album.id;
@@ -68,9 +69,8 @@ export default function Home({ landingVid, albums }) {
               })}
             </div>
           </div>
-          
         </ContentWrapper>
         <Footer />
-      </div>
+      </>
     );
   }
