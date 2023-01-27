@@ -24,6 +24,7 @@
     "hamburger-react": "^2.5.0",
     "next": "^12.3.1",
     "next-common-props": "^1.0.30",
+    "next-js": "^0.9.0-alpha",
     "react": "18.2.0",
     "react-bootstrap": "^2.7.0",
     "react-dom": "18.2.0",
@@ -32,7 +33,7 @@
     "remark": "^14.0.2",
     "remark-html": "^15.0.1",
     "safe-json-stringify": "^1.2.0",
-    "sass": "^1.54.9"
+    "sass": "^1.57.1"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.12",
