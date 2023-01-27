@@ -46,7 +46,7 @@ const ArtistPage = ({artist}) => {
                             const id = album.id;
                             const albumKey = album.fields.title;
                             return (
-                                <LatestReleases key={albumKey} album={album} arrowReturn={arrowReturn} />
+                                <LatestReleases key={albumKey} album={album} arrowReturn={arrowReturn} slugDirect="albums/" />
                             )
                         })}
                     </div>

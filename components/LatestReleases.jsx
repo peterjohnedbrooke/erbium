@@ -3,7 +3,7 @@ import styles from "../styles/Home.module.scss"
 import Link from 'next/link';
 import {Card} from "react-bootstrap"
 
-const LatestReleases = ({album, arrowReturn}) => {
+const LatestReleases = ({album, arrowReturn, slugDirect}) => {
     const artwork = album.fields.image.fields.file.url;
     console.log(artwork)
     const title = album.fields.title;
@@ -18,7 +18,7 @@ const LatestReleases = ({album, arrowReturn}) => {
 
   return (
     <div className={styles.releasesItem}>
-      <Link key={id} href={"albums/" + slug}>
+      <Link key={id} href={slugDirect + slug}>
         <div key={id} className={styles.cardBackReleases}>
           <img src={"https:" + artwork} className={styles.cardImg}/>
         </div>
