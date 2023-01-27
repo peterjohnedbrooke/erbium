@@ -3,12 +3,11 @@
 .wrapper {
     left: 0;
     right: 0;
-    padding: 5rem;
-    background-color: #474747;
+    background-color: #3D3D3D;
     position: absolute;
     display: flex;
     z-index: 2;
-    padding: 2rem;
+    padding: 1rem;
     overflow: hidden;
     border-top: 2px solid var(--color-bg-toggle);
 
@@ -23,7 +22,7 @@
     }
 
     .title {
-        color: white;
+        color: var(--color-bg-toggle);
         font-family: var(--text-family-primary);
         transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
         text-decoration: none;
@@ -46,7 +45,7 @@
         padding: 1rem;
         font-family: var(--text-family-body);
         width: 50vw;
-        gap: 2rem;
+        gap: 1rem;
 
 
         ul {
@@ -55,12 +54,13 @@
             align-items: flex-start;
             justify-content: space-evenly;
             width: 100%;
+            padding: 0 !important;
 
             a {
                 text-decoration: none;
                 list-style-type: none;
                 font-size: 30px;
-                color: cornflowerblue;
+                color: var(--color-links);
             }
             
         }

@@ -29,7 +29,7 @@
             display: flex;
             flex-direction: column;
             gap: 2rem;
-            background-color: white;
+            background-color: var(--color-bg-toggle);
         }
 
         .bio {
@@ -57,7 +57,7 @@
 
     .releases {
         display: contents;
-        background-color: white;
+        background-color: var(--color-bg-toggle);
         
         .releasesContainer {
             display: flex;
@@ -83,6 +83,9 @@
             flex-direction: column-reverse;
             align-items: center;
         }
+        .row {
+            gap: 0;
+        }
 
         .bio {
             .socials {
@@ -94,9 +97,18 @@
             align-items: center;
 
 
-            .imageCard, .infoCard {
-                width: 90%;
-
+            .imageCard {
+                width: 100%;
+            }
+            .infoCard {
+                width: 100vw;
+                padding: 1rem;
+            }
+        }
+        .releases {
+                        
+            .releasesContainer {
+                flex-direction: column;
             }
         }
     }
