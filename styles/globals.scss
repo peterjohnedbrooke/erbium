@@ -27,38 +27,39 @@ html {
   scroll-behavior: smooth;
 }
 
-.carousel {
-  overflow: hidden;
-}
+// .carousel {
+//   overflow: hidden;
+// }
 
-.carousel-control-prev {
-  height: 80% !important;
-}
+// .carousel-control-prev {
+//   height: 80% !important;
+// }
 
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  // height: max-content;
-  background-color: #fa0d5e;
-  border-radius: 5px;
-  margin: -10%;
-}
+// .carousel-control-prev-icon,
+// .carousel-control-next-icon {
+//   // height: max-content;
+//   background-color: #fa0d5e;
+//   border-radius: 5px;
+//   margin: -10%;
+// }
 
-.carousel-control-next {
-  height: 80% !important;
-}
+// .carousel-control-next {
+//   height: 80% !important;
+// }
 
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  visibility: hidden;
-}
+// .carousel-control-prev-icon,
+// .carousel-control-next-icon {
+//   visibility: hidden;
+// }
 
-.carousel:hover,
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  visibility: visible;
+// .carousel:hover,
+// .carousel-control-prev-icon,
+// .carousel-control-next-icon {
+//   visibility: visible;
+// }
+.carousel-indicators {
+  display: none;
 }
-
-// body,
 // body[data-theme="light"] {
 //   --color-text-primary: #0c0f17;
 //   --color-text-secondary: #e3e3e3;
@@ -67,15 +68,6 @@ html {
 //   --color-text-hover: #fa0d5e;
 //   --color-box-primary: rgba(3, 8, 20, 0.1);
 // }
-
-body {
-  --color-text-primary: #e3e3e3;
-  --color-text-secondary: #0c0f17;
-  --color-bg-primary: black;
-  --color-bg-toggle: #fff;
-  --color-text-hover: cornflowerblue;
-  --color-box-primary: rgba(227, 227, 227);
-}
 
 .themeToggleContainer {
   display: flex;
@@ -108,11 +100,17 @@ body {
 body {
   padding: 0;
   margin: 0;
-  --text-family-primary: Sansumi-Regular !important;
-  --text-family-bold: Sansumi-Demi-Bold !important;
+  --text-family-primary: 'Oswald', sans-serif !important;
+  --text-family-bold: 'Oswald', sans-serif !important;
   --text-family-secondary: 'Fjalla One', sans-serif;
   --text-family-body: 'Montserrat', sans-serif;
   transition: background-color 0.25s ease-in-out;
+  --color-text-primary: #e3e3e3;
+  --color-text-secondary: #0c0f17;
+  --color-bg-primary: black;
+  --color-bg-toggle: #fff;
+  --color-text-hover: cornflowerblue;
+  --color-box-primary: rgba(227, 227, 227);
 }
 
 .btnMain {

@@ -5,11 +5,11 @@ import ContentWrapper from "../../../components/ContentWrapper";
 import styles from "../../../styles/Albums.module.scss";
 import Footer from "../../../components/Footer";
 import Hero from "../../../components/Hero";
-import { motion } from "framer-motion";
-import { useRef, useEffect, useState } from "react";
-import { useRouter } from "next/router";
 import { createClient } from "contentful";
 import safeJsonStringify from 'safe-json-stringify';
+import { Carousel } from "react-bootstrap";
+import Media from 'react-media'
+// import "react-responsive-carousel/lib/styles/carousel.min.css"; 
 
 export async function getStaticProps() {
   const client = createClient({
@@ -30,12 +30,6 @@ export async function getStaticProps() {
 }
 
 export default function Albums({ albums }) {
-  const [width, setWidth] = useState(0);
-  const carousel = useRef();
-
-  useEffect(() => {
-    setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth);
-  }, []);
 
   const reverseAlbums = albums.map((album) => album).reverse();
   if (!!albums) {
@@ -47,21 +41,13 @@ export default function Albums({ albums }) {
         <Hero />
         <ContentWrapper>
           <div className={styles.container}>
-            <motion.div
-              ref={carousel}
-              className={styles.carousel}
-              whileTap={{ cursor: "grabbing" }}
-            >
-              <motion.div
-                drag="x"
-                dragConstraints={{ right: 0, left: -width }}
-                className={styles.innerCarousel}
-              >
-                {reverseAlbums.map((album, i) => {
+            
+            <Carousel className={styles.carousel}>
+                {albums.map((album, i) => {
                   const { title, description } = album.fields;
                   const id = album.id;
                   return (
-                    <motion.div key={id} className={styles.item}>
+                    <Carousel.Item key={id} className={styles.item}>
                       <AlbumCard
                         album={album}
                         Title={title}
@@ -70,11 +56,10 @@ export default function Albums({ albums }) {
                         id={id}
                         key={i}
                       />
-                    </motion.div>
+                    </Carousel.Item>
                   );
                 })}
-              </motion.div>
-            </motion.div>
+            </Carousel>
           </div>
         </ContentWrapper>
         <Footer />

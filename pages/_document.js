@@ -37,6 +37,7 @@ export default function _document() {
           rel="stylesheet"
         ></link>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet"></link>
+        <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet"></link>
         <link rel="icon" href="/favicon.png" />
       </Head>
       <body>

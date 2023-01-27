@@ -14,6 +14,8 @@ import { useRouter } from "next/router";
 import { Carousel } from "react-bootstrap";
 import ReactPlayer from "react-player";
 import { createClient } from "contentful";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 
 export async function getStaticProps({landingVid}) {

@@ -4,6 +4,8 @@ import App from "next/app";
 import { useEffect } from "react";
 import Transition from "../components/Transition";
 import { createClient } from "contentful";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function MyApp({ Component, pageProps, logo}) {
   return (
