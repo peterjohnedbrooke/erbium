@@ -50,10 +50,9 @@
         color: var(--color-text-primary);
         background-color: var(--color-bg-primary);
         padding: 1rem;
-        width: min-content;
+        width: fit-content;
+
     }
-
-
 
     .releases {
         display: contents;
@@ -77,6 +76,7 @@
 
 @media screen and (max-width: 600px) {
     .artistPageContainer {
+        padding: 0;
         .artistContents {
             display: flex;
             flex-direction: column;
@@ -103,6 +103,7 @@
             .infoCard {
                 width: 100vw;
                 padding: 1rem;
+                align-items: center;
             }
         }
         .releases {

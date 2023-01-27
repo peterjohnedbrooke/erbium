@@ -30,7 +30,12 @@ export default function DesktopNav({navLogo}) {
   }
 
   const handleLogo = () => {
-    setClickLogo(true)
+    // setClickLogo(true)
+    if(!!isOpen) {
+      handleExit()
+    } else {
+      return
+    }
   }
 
   const handleClick = () => {
@@ -173,7 +178,7 @@ export default function DesktopNav({navLogo}) {
         </div>
        
         <div className={styles.navBarContainerRight}>
-          <NavLogo navLogo={navLogo} handleExit={handleExit} />
+          <NavLogo navLogo={navLogo} handleLogo={handleLogo} isOpen={isOpen}/>
           <div className={click ? `${styles.burgerIconPage}` : `${styles.burgerIcon}`} onClick={handleClick}>
             <Hamburger size={25} className={styles.burgerInner} toggled={isOpen} rounded toggle ={setOpen} />
           </div>
