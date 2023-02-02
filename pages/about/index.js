@@ -38,7 +38,7 @@ export default function About({owners}) {
           <h1>MINING RARE EARTH ELEMENTS.</h1>
           <p>Welcome to Erbium Records, we are an independent record label based in Birmingham & London UK bringing together electronic artists and producers from around the world.
           </p>
-          <p>"Erbium is silvery-white, metallic, and malleable. A delicate substance tarnished by air, eroded by water, dissolved by acid.But where imperfection permeates atomic structure, new states emerge - a sound remoulded and reimagined for curious ears. From raw, dancefloor focussed energies to deep soundscapes of the void."</p>
+          <p>&apos;Erbium is silvery-white, metallic, and malleable. A delicate substance tarnished by air, eroded by water, dissolved by acid.But where imperfection permeates atomic structure, new states emerge - a sound remoulded and reimagined for curious ears. From raw, dancefloor focussed energies to deep soundscapes of the void.&apos;</p>
           <p>Send demos to: erbiumrecords@gmail.com.</p>
 
           <div className={styles.imageContainer}>
@@ -49,7 +49,7 @@ export default function About({owners}) {
               const id = owner.sys.id;
               console.log(image)
               return (
-                <a href={link} target="_blank" key={id}>
+                <a href={link} target="_blank" rel="noreferrer" key={id}>
                   <img src={"https:" + image} alt={alt} title={name} />
                   <h3>{name}</h3>
                 </a>
