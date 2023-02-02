@@ -55,6 +55,7 @@ export default function Artists({ artists }) {
                 const id = artist.sys.id;
                 const { image } =
                   artist.fields.image.fields.file.url;
+                  console.log(image)
                 return (
                   <ArtistCard
                     artist={artist}

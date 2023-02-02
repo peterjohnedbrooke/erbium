@@ -42,7 +42,7 @@ export default function Albums({ albums }) {
         <ContentWrapper>
           <div className={styles.container}>
             
-            <Carousel className={styles.carousel}>
+            <Carousel indicators={false} className={styles.carousel}>
                 {albums.map((album, i) => {
                   const { title, description } = album.fields;
                   const id = album.id;

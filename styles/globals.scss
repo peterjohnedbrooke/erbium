@@ -27,36 +27,6 @@ html {
   scroll-behavior: smooth;
 }
 
-// .carousel {
-//   overflow: hidden;
-// }
-
-// .carousel-control-prev {
-//   height: 80% !important;
-// }
-
-// .carousel-control-prev-icon,
-// .carousel-control-next-icon {
-//   // height: max-content;
-//   background-color: #fa0d5e;
-//   border-radius: 5px;
-//   margin: -10%;
-// }
-
-// .carousel-control-next {
-//   height: 80% !important;
-// }
-
-// .carousel-control-prev-icon,
-// .carousel-control-next-icon {
-//   visibility: hidden;
-// }
-
-// .carousel:hover,
-// .carousel-control-prev-icon,
-// .carousel-control-next-icon {
-//   visibility: visible;
-// }
 .carousel-indicators {
   display: none;
 }
@@ -183,6 +153,7 @@ h5 {
 a {
   font-weight: 600 !important;
   letter-spacing: 0.3rem;
+  text-decoration: none !important;
 }
 
 p {
@@ -213,7 +184,7 @@ p {
 }
 
 h5 {
-  font-size: 10px !important;
+  font-size: 16px !important;
 }
 
 h1 {
@@ -221,7 +192,7 @@ h1 {
 }
 
 p {
-  font-size: 14px !important;
+  // font-size: 14px !important;
 }
 
 @media screen and (max-width: 768px) {
@@ -289,6 +260,7 @@ p {
   }
 
   p {
-    font-size: 10px !important;
+    font-size: 15px !important;
+    line-height: 1rem !important;
   }
 } 
