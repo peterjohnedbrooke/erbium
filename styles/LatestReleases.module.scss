@@ -7,8 +7,6 @@
         transition: transform .5s ease;
         position: relative;
         filter: contrast(115%);
-        min-height: fit-content;
-        max-height: 350px;
         overflow: hidden;
         cursor: pointer;
       }
@@ -56,10 +54,4 @@
         font-family: var(--text-family-primary);
     }
 
-}
-
-@media screen and (max-width: 480px) {
-    .releasesItem {
-        max-width: none;
-    }
 }
