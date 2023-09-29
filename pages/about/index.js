@@ -39,7 +39,7 @@ export default function About({owners}) {
           <p>Welcome to Erbium Records, we are an independent record label based in Birmingham & London UK bringing together electronic artists and producers from around the world.
           </p>
           <p>&apos;Erbium is silvery-white, metallic, and malleable. A delicate substance tarnished by air, eroded by water, dissolved by acid.But where imperfection permeates atomic structure, new states emerge - a sound remoulded and reimagined for curious ears. From raw, dancefloor focussed energies to deep soundscapes of the void.&apos;</p>
-          <p>Send demos to: erbiumrecords@gmail.com.</p>
+          <p><a href="mailto:erbiumrecords@gmail.com">Send us your demos</a></p>
 
           <div className={styles.imageContainer}>
             {owners.map((owner, i) => {

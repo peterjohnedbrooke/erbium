@@ -34,13 +34,6 @@ export async function getStaticProps({}) {
 }
 
 export default function Artists({ artists }) {
-  const [width, setWidth] = useState(0);
-  const carousel = useRef();
-
-  // useEffect(() => {
-  //   setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth);
-  // }, []);
-
   if (!!artists) {
     return (
       <div>

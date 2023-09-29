@@ -2,13 +2,14 @@ import Head from "next/head";
 import React from "react";
 import AlbumCard from "../../../components/AlbumCard";
 import ContentWrapper from "../../../components/ContentWrapper";
-import styles from "../../../styles/Albums.module.scss";
+import styles from "../../../styles/Artists.module.scss";
 import Footer from "../../../components/Footer";
 import Hero from "../../../components/Hero";
 import { createClient } from "contentful";
 import safeJsonStringify from 'safe-json-stringify';
 import { Carousel } from "react-bootstrap";
 import Media from 'react-media'
+import ArtistCard from "../../../components/ArtistCard";
 // import "react-responsive-carousel/lib/styles/carousel.min.css"; 
 
 export async function getStaticProps() {
@@ -40,27 +41,24 @@ export default function Albums({ albums }) {
         </Head>
         <Hero />
         <ContentWrapper>
-          <div className={styles.container}>
-            
-            <Carousel indicators={false} className={styles.carousel}>
-                {albums.map((album, i) => {
-                  const { title, description } = album.fields;
-                  const id = album.id;
-                  return (
-                    <Carousel.Item key={id} className={styles.item}>
-                      <AlbumCard
-                        album={album}
-                        Title={title}
-                        Description={description}
-                        Slug={album.fields.slug}
-                        id={id}
-                        key={i}
-                      />
-                    </Carousel.Item>
-                  );
-                })}
-            </Carousel>
-          </div>
+            <div className={styles.artistsGrid}>
+              {albums.map((album, i) => {
+                const { title, description } = album.fields;
+                const id = album.id;
+                const { image } = album.fields.image.fields.file.url;
+                return (
+                  <ArtistCard
+                    artist={album}
+                    Name={title}
+                    Slug={`${album.fields.slug}`}
+                    Image={image}
+                    id={id}
+                    key={i}
+                    border={true}
+                  />
+                );
+              })}
+            </div>
         </ContentWrapper>
         <Footer />
       </div>

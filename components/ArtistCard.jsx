@@ -5,7 +5,7 @@ import { Row, Col, Card, Button } from 'react-bootstrap';
 import Animation from "./Animate";
 
 
-export default function ArtistCard({Name,Image,Slug,id, artist}) 
+export default function ArtistCard({Name,Image,Slug,id, artist, border}) 
 {
   const [hover, setHover] = useState(false)
   const handleHover= (i) => {
@@ -14,20 +14,15 @@ export default function ArtistCard({Name,Image,Slug,id, artist})
 
   const imageUrl = artist.fields.image.fields.file.url
 
+  console.log(artist)
   return (
     <>
         <div className={styles.card}>
         <Link href={"artists/" + Slug} key={id}>
-          <div className={styles.cardBack}>
+          <div className={border ? `${styles.cardBack} + ${styles.border}` : `${styles.cardBack}`}>
               <img src={"https:" + imageUrl} className={styles.image}/>
-              {/* <div className={styles.imageOverlay}>
-                <div className={styles.desktopCardInfo}>
-                    <button><h2>{artist.fields.name}</h2></button>
-                </div>    
-              </div> */}
               <div className={styles.mobileCardInfo}>
-                {/* <h5 className={styles.overlayText}>{artist.fields.name}</h5> */}
-                <button><h2>{artist.fields.name}</h2></button>
+                <button><h2>{artist.fields.name ? artist.fields.name : artist.fields.title}</h2></button>
               </div>  
           </div>
         </Link>

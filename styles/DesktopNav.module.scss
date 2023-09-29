@@ -54,7 +54,7 @@
   align-items: center;
   justify-content: space-between;
   top: 85vh;
-  width: 100vw;
+  width: 100%;
 }
 
 .sideNavContainer {
@@ -68,7 +68,7 @@
 .navBarContainerStatic,
 .navBarContainerScroll {
   // height: 150px;
-  width: 100vw;
+  width: 100%;
   top: 0;
   left: 0;
   // padding: 3rem;
@@ -98,6 +98,7 @@
   justify-content: space-between;
   width: 100%;
   align-items: center;
+  padding: 5px;
 }
 
 .burgerIcon,
