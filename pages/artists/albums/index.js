@@ -55,6 +55,7 @@ export default function Albums({ albums }) {
                     id={id}
                     key={i}
                     border={true}
+                    album={true}
                   />
                 );
               })}
